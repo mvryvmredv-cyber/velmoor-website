@@ -1,0 +1,204 @@
+{
+  "navbar": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact",
+    "logo": {
+      "title": "Velmoor",
+      "subtitle": "Real Estate Marketing & Investment"
+    }
+  },
+
+  "hero": {
+    "slide1": {
+      "title": "Find Your Dream Home",
+      "description": "We help you choose the perfect property."
+    },
+    "slide2": {
+      "title": "Luxury Properties",
+      "description": "Discover the best real estate projects."
+    },
+    "slide3": {
+      "title": "Build Your Future",
+      "description": "Your trusted real estate partner."
+    }
+  },
+
+  "about": {
+    "subtitle": "About Us",
+    "title": "Your Trusted Partner in Real Estate Marketing & Investment",
+    "description1": "Villamor | Your Real Estate Partner",
+    "description2": "At Velmore, we don't just present real estate opportunities; we help our clients discover the right opportunities and make informed decisions with confidence and clarity. Through a deep understanding of the market and a vision built on experience, we strive to deliver real value at every step because we believe that the best investments begin with the right decision, and the best results begin with a trusted partner.",
+
+    "features": {
+      "team": "Professional Team",
+      "investment": "Trusted Investment",
+      "projects": "Premium Projects",
+      "satisfaction": "Customer Satisfaction"
+    }
+  },
+  "services": {
+    "subtitle": "Our Services",
+    "title": "Marketing Solutions",
+    "description": "Personalized guidance to help you choose the right property with confidence",
+
+    "Real Estate Consultation": {
+      "title": "Real Estate Consultation",
+      "description": "Personalized guidance to help you choose the right property with confidence"
+    },
+
+    "Investment Advisory": {
+      "title": "Investment Advisory",
+      "description": "Strategic investment opportunities designed for sustainable long-term value"
+    },
+
+    "Property Marketing": {
+      "title": "Property Marketing",
+      "description": "Professional marketing for residential, commercial, and administrative projects."
+    },
+
+    "Buying Assistance": {
+      "title": "Buying Assistance",
+      "description": "We support you through every step, from consultation to property handover"
+    },
+
+    "Payment Solutions": {
+      "title": "Payment Solutions",
+      "description": "Flexible payment plans and financing guidance tailored to your needs."
+    },
+
+    "After-Sales Support": {
+      "title": "After-Sales Support",
+      "description": "Continuous support to ensure a smooth and satisfying ownership experience."
+    }
+  },
+
+  "projects": {
+    "subtitle": "The most important real estate projects",
+    "title": "Explore Our Latest Projects",
+    "watchVideo": "Watch Video",
+
+    "project1": {
+      "title": "Al Hamd Tower",
+      "location": "Second Row from the Corniche - Behind the Youth & Sports Organization",
+      "description": "Al Hamad Tower... the address for difficult questions, with a direct view of the Nile and a location that combines a distinguished complex with a strong return on investment."
+    },
+
+    "project2": {
+      "title": "Gloria Moon",
+      "location": "El Morour Road - Next to Porto Minya Compound",
+      "description": "A fully integrated residential community offering privacy, tranquility, modern designs, and comprehensive services for family living and investment."
+    },
+
+    "project3": {
+      "title": "Classya Compound",
+      "location": "Distinguished District",
+      "description": "A premium residential project combining a prime location, modern architecture, and green spaces to provide a luxurious lifestyle."
+    },
+
+    "project4": {
+      "title": "Porto Minya",
+      "location": "El Morour Road - Tourist District",
+      "description": "One of Minya's leading residential projects, offering an integrated living experience with diverse amenities and excellent investment opportunities."
+    },
+
+    "project5": {
+      "title": "Boulevard",
+      "location": "Third District - Next to Heart & Chest Hospital",
+      "description": "A modern residential community that combines luxury, comfort, advanced infrastructure, and services designed to meet residents' daily needs."
+    },
+
+    "project6": {
+      "title": "Dream Valley",
+      "location": "New Minya, near the governor's rest house",
+      "description": "A fully integrated community of villas and palaces with an authentic Moroccan character in Upper Egypt, a project that combines luxury, tranquility, and exceptional architectural identity."
+    },
+    "project7": {
+      "title": "Marrakesh",
+      "location": "Sixth District - El Tagnid - Beit El Watan",
+      "description": "An ideal destination for both living and investment, combining a prime location, contemporary design, and a peaceful environment."
+    }
+  },
+  "whyChoose": {
+    "subtitle": "Why Choose velmoor",
+    "title": "Why Clients Trust Velmoor",
+
+    "listen": {
+      "title": "We Listen",
+      "description": "We understand your goals and requirements before recommending the right property."
+    },
+
+    "analyze": {
+      "title": "We Analyze",
+      "description": "We carefully study the market and available opportunities to help you make informed decisions."
+    },
+
+    "recommend": {
+      "title": "We Recommend",
+      "description": "We recommend the best properties based on your needs, goals, and budget."
+    },
+
+    "support": {
+      "title": "We Support",
+      "description": "We stay by your side throughout every step until you complete your purchase with confidence."
+    }
+  },
+  "contact": {
+    "subtitle": "Contact Us",
+    "title": "Let's Talk About Your Next Investment",
+
+    "contactTitle": "Get In Touch",
+
+    "description": "We are always happy to hear from you. Whether you're looking for your dream home or a promising investment opportunity, our team is ready to help.",
+    "phone": "+20 103 443 9824",
+    "address": "Minya - Ibn El-Khasib Street - Al Hamd Tower - Next to Shaheen Mosque",
+
+    "whatsapp": "Chat on WhatsApp",
+
+    "form": {
+      "name": "Your Name",
+      "phone": "Phone Number",
+      "message": "Your Message",
+      "sending": "Sending...",
+      "send": "Send Message",
+
+      "success": "✅ Your message has been sent successfully.",
+      "error": "❌ Failed to send your message. Please try again."
+    }
+  },
+  "footer": {
+    "description": "Helping you find the perfect property with trust, transparency, and professional service.",
+    "phone": "+20 103 443 9824",
+
+    "quickLinks": "Quick Links",
+
+    "services": "Services",
+
+    "contact": "Contact",
+
+    "links": {
+      "home": "Home",
+      "about": "About",
+      "services": "Services",
+      "projects": "Projects",
+      "contact": "Contact"
+    },
+
+    "servicesList": {
+      "consultation": "Real Estate Consultation",
+      "investment": "Investment Advisory",
+      "marketing": "Property Marketing",
+      "buying": "Buying Assistance",
+      "payment": "Payment Solutions",
+      "support": "After-Sales Support"
+    },
+
+    "address": "Minya - Ibn El-Khasib Street - Al Hamd Tower - Next to Shaheen Mosque",
+
+    "copyright": "© 2026 Velmoor. All Rights Reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms & Conditions"
+  }
+}

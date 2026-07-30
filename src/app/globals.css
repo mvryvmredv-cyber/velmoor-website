@@ -1,0 +1,87 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #07111f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #4d7db6, #1b3255);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6f9bd0;
+}
+body {
+  font-family: var(--font-body);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+}
+/* Navigation Buttons */
+
+.swiper-button-next,
+.swiper-button-prev {
+  width: 56px;
+  height: 56px;
+  border-radius: 9999px;
+  background: rgba(27, 50, 85, 0.95);
+  color: #fff !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  transform: scale(1.1);
+  background: #24477b;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 20px;
+  font-weight: 700;
+}
+.swiper-button-prev {
+  left: -70px;
+}
+
+.swiper-button-next {
+  right: -70px;
+}
+/* ---------- Mobile ---------- */
+
+@media (max-width: 768px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 42px;
+    height: 42px;
+  }
+
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    font-size: 14px;
+  }
+  .swiper-button-prev {
+    left: -10px;
+  }
+
+  .swiper-button-next {
+    right: -10px;
+  }
+}
