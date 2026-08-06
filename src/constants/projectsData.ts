@@ -32,7 +32,6 @@ export const projects = [
       "/assets/image/proj4(4).jpg",
     ],
     video: "/assets/video/proj4.mp4",
-    heroImage: "/assets/image/proj4(1).jpg",
   },
   {
     id: "project5",
@@ -43,7 +42,6 @@ export const projects = [
       "/assets/image/proj5(4).jpg",
     ],
     video: "/assets/video/proj5.mp4",
-    heroImage: "/assets/image/proj5(1).jpg",
   },
   {
     id: "project6",
@@ -53,7 +51,6 @@ export const projects = [
       "/assets/image/proj6(3).jpg",
     ],
     video: "/assets/video/proj6.mp4",
-    heroImage: "/assets/image/proj6(1).jpg",
   },
   {
     id: "project7",
@@ -63,6 +60,5 @@ export const projects = [
       "/assets/image/proj7(4).jpg",
     ],
     video: "/assets/video/proj7.mp4",
-    heroImage: "/assets/image/proj7(2).jpg",
   },
 ];

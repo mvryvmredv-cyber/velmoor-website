@@ -89,7 +89,6 @@ md:w-14 md:h-14 -translate-y-1/2 z-20
                   <SwiperSlide key={index}>
                     <div>
                       <ProjectCard
-                        id={project.id}
                         images={project.images}
                         video={project.video}
                         title={t(`${project.id}.title`)}
