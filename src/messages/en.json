@@ -6,8 +6,7 @@
     "projects": "Projects",
     "contact": "Contact",
     "logo": {
-      "title": "Velmoor",
-      "subtitle": "Real Estate Marketing & Investment"
+      "title": "VELMOOR"
     }
   },
 
@@ -17,26 +16,30 @@
       "description": "We help you choose the perfect property."
     },
     "slide2": {
-      "title": "Luxury Properties",
-      "description": "Discover the best real estate projects."
+      "title": "A property is not measured by its size, but by its value over time.",
+      "description": "We carefully select projects and study every detail to ensure you get an investment and housing opportunity worthy of your trust."
     },
     "slide3": {
-      "title": "Build Your Future",
-      "description": "Your trusted real estate partner."
+      "title": "Every decision begins with a vision, and we help you see it clearly.",
+      "description": "At Velmoor, we don't just showcase properties we help you choose the place that suits your lifestyle and provides real value for your future."
     }
   },
 
   "about": {
     "subtitle": "About Us",
     "title": "Your Trusted Partner in Real Estate Marketing & Investment",
-    "description1": "Villamor | Your Real Estate Partner",
-    "description2": "At Velmore, we don't just present real estate opportunities; we help our clients discover the right opportunities and make informed decisions with confidence and clarity. Through a deep understanding of the market and a vision built on experience, we strive to deliver real value at every step because we believe that the best investments begin with the right decision, and the best results begin with a trusted partner.",
+    "description1": "Velmoor | Your Real Estate Partner",
+    "description2": "At Velmore, we don't just present real estate opportunities we help our clients discover the right opportunities and make informed decisions with confidence and clarity. Through a deep understanding of the market and a vision built on experience, we strive to deliver real value at every step because we believe that the best investments begin with the right decision, and the best results begin with a trusted partner.",
 
     "features": {
       "team": "Professional Team",
       "investment": "Trusted Investment",
       "projects": "Premium Projects",
       "satisfaction": "Customer Satisfaction"
+    },
+    "experience": {
+      "number": "10+",
+      "text": "Years of Experience"
     }
   },
   "services": {

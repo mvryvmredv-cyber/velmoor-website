@@ -6,19 +6,21 @@ import LanguageFloating from "@/components/LanguageFloating";
 import ThemeProvider from "@/components/Provider/ThemeProvider";
 import RestoreScroll from "@/components/RestoreScroll";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import { Alexandria, Manrope } from "next/font/google";
+import "yet-another-react-lightbox/styles.css";
+
 import Screen from "@/components/Screen";
 import "../globals.css";
+import { Cormorant_Garamond, Manrope } from "next/font/google";
 
-const bodyFont = Alexandria({
-  subsets: ["arabic", "latin"],
-  variable: "--font-body",
+const headingFont = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  variable: "--font-heading",
 });
 
-const headingFont = Manrope({
+const bodyFont = Manrope({
   subsets: ["latin"],
-  variable: "--font-heading",
-  display: "swap",
+  variable: "--font-body",
 });
 
 const locales = ["ar", "en"];
@@ -40,16 +42,16 @@ export async function generateMetadata({
     // metadataBase: new URL("https://velmoor.com"),
 
     title: isArabic
-      ? "فيلمور | التسويق العقاري"
+      ? "ڤلمور | التسويق العقاري"
       : "Velmoor | Real Estate Marketing",
 
     description: isArabic
-      ? "فيلمور شركة متخصصة في التسويق العقاري والاستشارات العقارية، نساعدك في الوصول إلى أفضل المشروعات السكنية والتجارية والاستثمارية داخل المنيا والمنيا الجديدة وجميع أنحاء مصر."
+      ? "ڤلمور شركة متخصصة في التسويق العقاري والاستشارات العقارية، نساعدك في الوصول إلى أفضل المشروعات السكنية والتجارية والاستثمارية داخل المنيا والمنيا الجديدة وجميع أنحاء مصر."
       : "Velmoor is a leading real estate marketing company helping clients discover premium residential, commercial and investment properties across Egypt.",
 
     keywords: isArabic
       ? [
-          "فيلمور",
+          "ڤلمور",
           "التسويق العقاري",
           "عقارات",
           "عقارات المنيا",
@@ -63,8 +65,6 @@ export async function generateMetadata({
       : [
           "Velmoor",
           "Real Estate",
-          "Elminya",
-          " New Minya",
           "Real Estate Marketing",
           "Property Investment",
           "Luxury Properties",
@@ -92,11 +92,11 @@ export async function generateMetadata({
 
     openGraph: {
       title: isArabic
-        ? "فيلمور | التسويق العقاري"
+        ? "ڤلمور | التسويق العقاري"
         : "Velmoor | Real Estate Marketing",
 
       description: isArabic
-        ? "اكتشف أفضل الفرص العقارية مع فيلمور."
+        ? "اكتشف أفضل الفرص العقارية مع ڤلمور."
         : "Discover premium real estate opportunities with Velmoor.",
 
       // url: "https://velmoor.com",
@@ -121,11 +121,11 @@ export async function generateMetadata({
       card: "summary_large_image",
 
       title: isArabic
-        ? "فيلامور | التسويق العقاري"
+        ? "ڤلمور | التسويق العقاري"
         : "Velmoor | Real Estate Marketing",
 
       description: isArabic
-        ? "اكتشف أفضل الفرص العقارية مع فيلامور."
+        ? "اكتشف أفضل الفرص العقارية مع ڤلمور."
         : "Discover premium real estate opportunities with Velmoor.",
 
       images: ["/seo-cover.jpg"],

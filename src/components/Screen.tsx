@@ -28,24 +28,18 @@ export default function Screen({ children }: { children: React.ReactNode }) {
             <motion.div
               initial={{
                 opacity: 0,
-                scale: 0.3,
-                y: 80,
-                rotate: -15,
+                scale: 0.95,
               }}
               animate={{
                 opacity: 1,
                 scale: 1,
-                y: 0,
-                rotate: 0,
               }}
               exit={{
                 opacity: 0,
-                scale: 1.8,
-                rotate: 25,
-                filter: "blur(15px)",
+                scale: 1,
               }}
               transition={{
-                duration: 1.5,
+                duration: 0.8,
                 ease: "easeOut",
               }}
               className="flex flex-col items-center"

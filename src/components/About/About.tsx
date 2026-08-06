@@ -21,7 +21,7 @@ export default function About() {
               {t("subtitle")}
             </h1>
 
-            <h2 className="text-5xl  mt-4 text-gray-900 dark:text-white">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl  mt-4 text-gray-900 dark:text-white">
               {t("title")}
             </h2>
           </div>
@@ -44,8 +44,11 @@ export default function About() {
                 />
 
                 <div className="absolute -bottom-8 -right-8 bg-[#1b3255] dark:bg-blue-600 text-white p-6 rounded-2xl shadow-xl">
-                  <h3 className="text-4xl font-bold">10+</h3>
-                  <p className="text-sm mt-2">Years of Experience</p>
+                  <h3 className="text-4xl font-bold">
+                    {" "}
+                    {t("experience.number")}
+                  </h3>
+                  <p className="text-sm mt-2"> {t("experience.text")}</p>
                 </div>
               </div>
             </motion.div>
@@ -57,11 +60,28 @@ export default function About() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-5xl font-bold leading-tightmb-12 text-gray-900 dark:text-white">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tightmb-12 text-gray-900 dark:text-white">
                 {t("description1")}
               </h2>
 
-              <p className="text-gray-600 dark:text-gray-300 mt-6 mb-6 leading-8 text-2xl ">
+              <p
+                className="
+mt-6
+max-w-3xl
+mx-auto
+text-center
+
+text-lg
+sm:text-xl
+md:text-2xl
+
+leading-9
+md:leading-10
+
+text-gray-600
+dark:text-gray-300
+"
+              >
                 {t("description2")}
               </p>
 

@@ -25,7 +25,7 @@ export default function Services() {
               {t("subtitle")}
             </h1>
 
-            <h2 className="text-5xl  mt-4 text-gray-900 dark:text-white">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl  mt-4 text-gray-900 dark:text-white">
               {t("title")}
             </h2>
 

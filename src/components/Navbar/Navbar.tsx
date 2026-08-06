@@ -40,44 +40,34 @@ export default function Navbar() {
       }`}
     >
       <div
-        className={`max-w-7xl mx-auto flex items-center justify-between px-8 transition-all duration-300 ${
+        className={`max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 transition-all duration-300 ${
           scrolled ? "py-3" : "py-5"
         }`}
       >
         {/* Logo */}
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-1">
           <Image
             src={
               resolvedTheme === "dark" ? "/logo-dark.png" : "/logo-light.png"
             }
             alt="Velmoor"
-            width={200}
-            height={50}
+            width={350}
+            height={100}
             priority
             className="h-12 w-auto transition-all duration-300"
           />
 
           <div className="leading-tight">
-            <h1
-              className={`text-[22px] font-serif tracking-[4px] transition-colors duration-500 ${
+            <span
+              className={`text-[25px]   font-serif  tracking-[4px] transition-colors duration-500 ${
                 scrolled
                   ? "text-[#1b3255] dark:text-white"
                   : "text-white hover:text-gray-200"
               }`}
             >
               {t("logo.title")}
-            </h1>
-
-            <p
-              className={`text-[10px] tracking-[3px] uppercase transition-colors duration-500 ${
-                scrolled
-                  ? "text-[#1b3255] dark:text-white "
-                  : "text-white hover:text-gray-200"
-              }`}
-            >
-              {t("logo.subtitle")}
-            </p>
+            </span>
           </div>
         </div>
 
@@ -87,7 +77,7 @@ export default function Navbar() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className={`text-[17px] font-medium transition duration-300 ${
+                className={`text-[17px] font-serif transition duration-300 ${
                   scrolled
                     ? "text-[#1b3255] dark:text-white hover:text-blue-700 dark:hover:text-blue-400"
                     : "text-white hover:text-gray-200"
@@ -132,7 +122,6 @@ export default function Navbar() {
                   <Moon size={20} className="text-slate-700" />
                 </motion.div>
               )}
-              ,{" "}
             </AnimatePresence>
           </button>
 

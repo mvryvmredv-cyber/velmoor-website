@@ -17,14 +17,14 @@ export default function Hero() {
     <section id="home" className="relative h-screen">
       <button
         onClick={() => swiperRef.current?.slidePrev()}
-        className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-white/15 backdrop-blur-md border border-white/20 text-white transition-all duration-300 hover:scale-110 hover:bg-white hover:text-[#1b3255]"
+        className="absolute left-2 md:left-6 top-[75%] -translate-y-1/2 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-white/15 backdrop-blur-md border border-white/20 text-white transition-all duration-300 hover:scale-110 hover:bg-white hover:text-[#1b3255]"
       >
         <ChevronLeft size={18} strokeWidth={2} />
       </button>
 
       <button
         onClick={() => swiperRef.current?.slideNext()}
-        className="absolute right-2   md:right-6 top-1/2 -translate-y-1/2 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-white/15 backdrop-blur-md border border-white/20 text-white transition-all duration-300 hover:scale-110 hover:bg-white hover:text-[#1b3255]"
+        className="absolute right-2   md:right-6 top-[75%] -translate-y-1/2 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-white/15 backdrop-blur-md border border-white/20 text-white transition-all duration-300 hover:scale-110 hover:bg-white hover:text-[#1b3255]"
       >
         <ChevronRight size={18} strokeWidth={2} />
       </button>
@@ -50,11 +50,11 @@ export default function Hero() {
 
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center text-white max-w-3xl px-6">
-                  <h1 className="text-5xl md:text-5xl font-bold">
+                  <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">
                     {t(`${slide.key}.title`)}
                   </h1>
 
-                  <p className="mt-6 text-lg md:text-xl text-gray-200">
+                  <p className="mt-4 text-base sm:text-lg md:text-xl">
                     {t(`${slide.key}.description`)}
                   </p>
                 </div>

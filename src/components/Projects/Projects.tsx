@@ -24,26 +24,48 @@ export default function Projects() {
               {t("subtitle")}
             </h1>
 
-            <h2 className="text-4xl md:text-5xl  mt-4 mb-12 text-gray-900 dark:text-white">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl  mt-4 mb-12 text-gray-900 dark:text-white">
               {t("title")}
             </h2>
-            <div className="relative px-16 md:px-20">
+            <div className="relative px-0 md:px-20">
               <button
-                className="custom-prev absolute left-0 top-1/2 -translate-y-1/2 z-20
-    w-14 h-14 rounded-full bg-white dark:bg-slate-900
-    shadow-xl flex items-center justify-center
-    hover:scale-110 duration-300"
+                className="
+custom-prev
+absolute
+left-[-12px] md:left-0
+top-[60%]
+md:top-1/2
+-translate-y-1/2
+z-20
+w-9 h-9
+md:w-14 md:h-14
+rounded-full
+bg-white dark:bg-slate-900
+shadow-lg
+flex items-center justify-center
+transition
+hover:scale-110
+"
               >
-                <ChevronLeft className="text-[#1b3255] dark:text-white" />
+                <ChevronLeft
+                  size={18}
+                  className="md:w-6 md:h-6 text-[#1b3255] dark:text-white"
+                />
               </button>
 
               <button
-                className="custom-next absolute right-0 top-1/2 -translate-y-1/2 z-20
-    w-14 h-14 rounded-full bg-white dark:bg-slate-900
+                className="custom-next absolute right-[-12px] md:right-0
+ top-[60%]
+md:top-1/2
+md:w-14 md:h-14 -translate-y-1/2 z-20
+    w-9 h-9 rounded-full bg-white dark:bg-slate-900
     shadow-xl flex items-center justify-center
     hover:scale-110 duration-300"
               >
-                <ChevronRight className="text-[#1b3255] dark:text-white" />
+                <ChevronRight
+                  size={18}
+                  className="md:w-6 md:h-6 text-[#1b3255] dark:text-white"
+                />
               </button>
               <Swiper
                 modules={[Navigation]}
@@ -67,6 +89,7 @@ export default function Projects() {
                   <SwiperSlide key={index}>
                     <div>
                       <ProjectCard
+                        id={project.id}
                         images={project.images}
                         video={project.video}
                         title={t(`${project.id}.title`)}

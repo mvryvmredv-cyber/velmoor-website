@@ -21,7 +21,8 @@
     "react-country-flag": "^3.1.0",
     "react-dom": "19.2.4",
     "react-icons": "^5.7.0",
-    "swiper": "^14.0.6"
+    "swiper": "^14.0.6",
+    "yet-another-react-lightbox": "^3.32.2"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

@@ -49,16 +49,16 @@ export default function Contact() {
               {t("subtitle")}
             </h1>
 
-            <h2 className="text-5xl  mt-4 mb-12 text-gray-900 dark:text-white">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl  mt-4 mb-12 text-gray-900 dark:text-white">
               {t("title")}
             </h2>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
               {/* Left Side */}
               <div>
-                <h3 className="text-3xl font-bold text-[#1b3255] dark:text-blue-400 mb-6">
+                {/* <h3 className="text-3xl font-bold text-[#1b3255] dark:text-blue-400 mb-6">
                   {t("contactTitle")}
-                </h3>
+                </h3> */}
 
                 <p className="text-gray-600  dark:text-gray-300 leading-8 mb-10">
                   {t("description")}
