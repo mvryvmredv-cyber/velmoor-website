@@ -36,6 +36,7 @@ export default function ProjectCard({
       {/* Card */}
 
       <div
+        onClick={() => setOpenGallery(true)}
         className="
     cursor-pointer
     w-full
@@ -215,6 +216,11 @@ transition-all duration-300
               }}
             />
           </div>
+          <Lightbox
+            open={openGallery}
+            close={() => setOpenGallery(false)}
+            slides={images.map((img) => ({ src: img }))}
+          />
         </div>
       )}
     </>
