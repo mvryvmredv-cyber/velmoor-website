@@ -23,7 +23,7 @@ export default function Contact() {
       )
       .then(() => {
         setStatus("success");
-        form.reset(); // استخدمي form بدل e.currentTarget
+        form.reset();
         setLoading(false);
 
         setTimeout(() => setStatus(""), 5000);
@@ -56,10 +56,6 @@ export default function Contact() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
               {/* Left Side */}
               <div>
-                {/* <h3 className="text-3xl font-bold text-[#1b3255] dark:text-blue-400 mb-6">
-                  {t("contactTitle")}
-                </h3> */}
-
                 <p className="text-gray-600  dark:text-gray-300 leading-8 mb-10">
                   {t("description")}
                 </p>
@@ -78,10 +74,10 @@ export default function Contact() {
                   <div className="flex items-center gap-4">
                     <Mail className="text-[#1b3255]" size={24} />
                     <a
-                      href="mailto:velmoorelhamd@gmail.com"
+                      href="mailto:velmoor929@gmail.com"
                       className="text-gray-600  dark:text-gray-300  dark:hover:text-blue-400 transition"
                     >
-                      velmoorelhamd@gmail.com
+                      velmoor929@gmail.com
                     </a>
                   </div>
 
@@ -95,7 +91,7 @@ export default function Contact() {
                   <div className="flex items-center gap-4">
                     <MessageCircle className="text-green-600" size={24} />
                     <a
-                      href="https://wa.me/201034439833"
+                      href="https://wa.me/+20 10 11196903?text=مرحباً، أريد الاستفسار عن المشروعات المتاحة."
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-gray-600  dark:text-gray-300 hover:text-green-600 transition"

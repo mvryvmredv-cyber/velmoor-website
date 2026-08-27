@@ -10,8 +10,13 @@ import "yet-another-react-lightbox/styles.css";
 
 import Screen from "@/components/Screen";
 import "../globals.css";
-import { Cormorant_Garamond, Manrope } from "next/font/google";
+import { Cormorant_Garamond, Manrope, Tajawal } from "next/font/google";
 
+const tajawal = Tajawal({
+  subsets: ["arabic"],
+  weight: ["400", "500", "700"],
+  variable: "--font-tajawal",
+});
 const headingFont = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["500", "600", "700"],
@@ -153,9 +158,9 @@ export default async function LocaleLayout({
   return (
     <html
       lang={locale}
-      dir={locale === "ar" ? "rtl" : "ltr"}
-      className={`${bodyFont.variable} ${headingFont.variable}`}
       suppressHydrationWarning
+      dir={locale === "ar" ? "rtl" : "ltr"}
+      className={`${bodyFont.variable} ${headingFont.variable} ${tajawal.variable}`}
     >
       <body className="bg-white dark:bg-slate-950 transition-colors duration-300">
         <Screen>

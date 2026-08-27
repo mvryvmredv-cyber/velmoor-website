@@ -96,7 +96,7 @@ export default function Footer() {
               <div className="flex items-center gap-3">
                 <Phone size={18} />
                 <a
-                  href="tel:+201034439824"
+                  href="tel:+20 10 11196903"
                   className=" hover:text-blue-300 dark:hover:text-blue-400"
                 >
                   {t("phone")}
@@ -105,8 +105,8 @@ export default function Footer() {
 
               <div className="flex items-center gap-3 hover:text-blue-300 dark:hover:text-blue-400">
                 <Mail size={18} />
-                <a href="mailto:velmoorelhamd@gmail.com" className="">
-                  velmoorelhamd@gmail.com
+                <a href="mailto:velmoor929@gmail.com" className="">
+                  velmoor929@gmail.com
                 </a>
               </div>
 
@@ -118,7 +118,7 @@ export default function Footer() {
 
             <div className="flex gap-5 mt-8">
               <a
-                href="https://facebook.com/share/1GqcPLFhB4"
+                href="https://www.facebook.com/share/1BV6e8G2is/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -126,7 +126,7 @@ export default function Footer() {
               </a>
 
               <a
-                href="https://instagram.com/velmoor40"
+                href="https://www.instagram.com/velmoor1?igsi=MTFlOWYyN2J6MWhpaw=="
                 target="_blank"
                 rel="noopener noreferrer"
               >

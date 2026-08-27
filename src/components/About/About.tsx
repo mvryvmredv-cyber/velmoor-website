@@ -4,10 +4,26 @@ import { CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { useEffect, useState } from "react";
 import Reveal from "@/components/Reveal";
 
 export default function About() {
   const t = useTranslations("about");
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+
+    window.addEventListener("resize", checkMobile);
+
+    return () => {
+      window.removeEventListener("resize", checkMobile);
+    };
+  }, []);
 
   return (
     <Reveal>
@@ -17,7 +33,7 @@ export default function About() {
       >
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h1 className="text-[#1b3255]  font-bold dark:text-blue-400 uppercase tracking-[4px] font-serif text-2xl">
+            <h1 className="text-[#1b3255]  font-bold dark:text-blue-400 uppercase tracking-[4px] font-tajawal text-2xl">
               {t("subtitle")}
             </h1>
 
@@ -29,8 +45,10 @@ export default function About() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center max-w-7xl mx-auto">
             {/* Left Image */}
             <motion.div
-              initial={{ opacity: 0, x: -100 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={
+                isMobile ? { opacity: 0, y: -60 } : { opacity: 0, x: -100 }
+              }
+              whileInView={{ opacity: 1, x: 0, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
@@ -55,8 +73,10 @@ export default function About() {
 
             {/* Right Content */}
             <motion.div
-              initial={{ opacity: 0, x: 100 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={
+                isMobile ? { opacity: 0, y: -60 } : { opacity: 0, x: 100 }
+              }
+              whileInView={{ opacity: 1, x: 0, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >

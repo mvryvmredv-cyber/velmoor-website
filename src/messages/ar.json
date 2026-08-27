@@ -4,6 +4,7 @@
     "services": "الخدمات",
     "about": "من نحن",
     "projects": "المشاريع",
+    "addProperty": "ضيف وحدتك الآن",
     "contact": "تواصل معنا",
     "logo": {
       "title": "ڤلمور"
@@ -12,8 +13,8 @@
 
   "hero": {
     "slide1": {
-      "title": "ابحث عن  منزل  أحلامك",
-      "description": " نرافقك في كل خطوة لنضمن لك تجربة سهلة وآمنة"
+      "title": "ابحث عن منزل أحلامك",
+      "description": "نرافقك في كل خطوة لنضمن لك تجربة سهلة وآمنة"
     },
     "slide2": {
       "title": "العقار الجيد لا يُقاس بمساحته.. بل بقيمته مع مرور الوقت",
@@ -21,15 +22,15 @@
     },
     "slide3": {
       "title": "كل قرار يبدأ برؤية ونحن نساعدك أن تراها بوضوح.",
-      "description": "في فلمور لا نعرض عقارات فقط، بل نساعدك على اختيار المكان الذي يناسب أسلوب حياتك، ويحقق قيمة حقيقية لمستقبلك"
+      "description": "في ڤلمور لا نعرض عقارات فقط، بل نساعدك على اختيار المكان الذي يناسب أسلوب حياتك، ويحقق قيمة حقيقية لمستقبلك"
     }
   },
 
   "about": {
     "subtitle": "من نحن",
     "title": "شريكك الموثوق في التسويق والاستثمار العقاري",
-    "description1": " ڤيلمور | شريكك العقاري ",
-    "description2": "في ڤيلمور مش بنبيع عقارات وبس، إحنا بنساعد العميل ياخد القرار الصح بنوفر أكبر عدد من المشروعات في مكان واحد ونقارن بينها بكل حرص بنفهم احتياج العميل الأول، وبعدها بنرشح له أفضل الخيارات المناسبة لميزانيته وأهدافه متابعة كاملة من أول الاستفسار لحد التعاقد والاستلام فريق متخصص يمتلك معرفة قوية بالسوق العقاري واتجاهاته استشارات مجانية تساعد العميل يحقق أعلى عائد سواء للسكن أو الاستثمار مصداقية  في عرض المميزات والتفاصيل بدون مبالغ ڤيلمور مش مجرد شركة تسويق عقاري، ڤيلمور شريكك في اختيار العقار الصح وتحقيق أفضل استثمار لمستقبلك",
+    "description1": "ڤلمور | شريكك العقاري",
+    "description2": "في ڤلمور مش بنبيع عقارات وبس، إحنا بنساعد العميل ياخد القرار الصح. بنوفر أكبر عدد من المشروعات في مكان واحد ونقارن بينها بكل حرص. بنفهم احتياج العميل الأول، وبعدها بنرشح له أفضل الخيارات المناسبة لميزانيته وأهدافه. متابعة كاملة من أول الاستفسار لحد التعاقد والاستلام. فريق متخصص يمتلك معرفة قوية بالسوق العقاري واتجاهاته. استشارات مجانية تساعد العميل يحقق أعلى عائد سواء للسكن أو الاستثمار. مصداقية في عرض المميزات والتفاصيل بدون مبالغة. ڤلمور مش مجرد شركة تسويق عقاري، ڤلمور شريكك في اختيار العقار الصح وتحقيق أفضل استثمار لمستقبلك.",
 
     "features": {
       "team": "فريق محترف",
@@ -37,6 +38,7 @@
       "projects": "مشروعات متميزة",
       "satisfaction": "رضا العملاء"
     },
+
     "experience": {
       "number": "10+",
       "text": "سنوات من الخبرة"
@@ -78,15 +80,16 @@
       "description": "متابعة مستمرة بعد الشراء لضمان تجربة مريحة وخدمة موثوقة."
     }
   },
+
   "projects": {
-    "subtitle": "أهم المشاريع  العقاريه ",
+    "subtitle": "أهم المشاريع العقارية",
     "title": "اكتشف أبرز مشروعاتنا",
     "watchVideo": "شاهد الفيديو",
 
     "project1": {
       "title": "برج الحمد",
       "location": "صف ثاني من الكورنيش - خلف منظمة الشباب والرياضة",
-      "description": "برج الحمد .. عنوان الرقي والاستثمار، بإطلالة مباشرة على النيل وموقع حيوي يجمع بين السكن المتميز والعائد الاستثماري القوي."
+      "description": "برج الحمد.. عنوان الرقي والاستثمار، بإطلالة مباشرة على النيل وموقع حيوي يجمع بين السكن المتميز والعائد الاستثماري القوي."
     },
 
     "project2": {
@@ -118,12 +121,14 @@
       "location": "الحي السادس - التجنيد - بيت الوطن",
       "description": "وجهة مثالية للراغبين في السكن أو الاستثمار، حيث يجمع المشروع بين الموقع المتميز والتصميم العصري والهدوء."
     },
+
     "project7": {
       "title": "مراكش",
       "location": "المنيا الجديدة بالقرب من استراحة المحافظ",
-      "description": "   أول مجتمع متكامل للفيلات والقصور بطابع مغربي أصيل في صعيد مصر مشروع يجمع بين الفخامةو الهدوء والهوية المعمارية الاستثنائية"
+      "description": "أول مجتمع متكامل للفيلات والقصور بطابع مغربي أصيل في صعيد مصر، مشروع يجمع بين الفخامة والهدوء والهوية المعمارية الاستثنائية."
     }
   },
+
   "whyChoose": {
     "subtitle": "لماذا تختار ڤلمور",
     "title": "لماذا تثق في ڤلمور",
@@ -148,12 +153,13 @@
       "description": "نرافقك في جميع خطوات الشراء والاستثمار حتى إتمام التعاقد بكل ثقة وراحة."
     }
   },
+
   "contact": {
     "subtitle": "تواصل معنا",
     "title": "دعنا نتحدث عن استثمارك القادم",
 
-    "description": "يسعدنا التواصل معكم سواء كنت تبحث عن منزل أحلامكم أو فرصة استثمارية مميزة، فإن فريقنا على أتم الاستعداد لمساعدتك سنكون سعداء بالرد على استفساراتكم وتقديم الدعم اللازم",
-    "phone": "٠١٠٣٤٤٣٩٨٢٤",
+    "description": "يسعدنا التواصل معكم، سواء كنت تبحث عن منزل أحلامك أو فرصة استثمارية مميزة، فإن فريقنا على أتم الاستعداد لمساعدتك. سنكون سعداء بالرد على استفساراتكم وتقديم الدعم اللازم.",
+    "phone": "٠١٠١١١٩٦٩٠٣",
     "address": "المنيا - شارع ابن الخصيب - برج الحمد - بجوار مسجد شاهين",
 
     "whatsapp": "تواصل عبر واتساب",
@@ -169,13 +175,13 @@
       "error": "❌ حدث خطأ أثناء إرسال الرسالة، حاول مرة أخرى."
     }
   },
+
   "footer": {
     "description": "نساعدك في العثور على العقار المثالي بثقة وخدمة مميزة.",
 
     "quickLinks": "روابط سريعة",
-    "phone": "٠١٠٣٤٤٣٩٨٢٤",
+    "phone": "٠١٠١١١٩٦٩٠٣",
     "services": "الخدمات",
-
     "contact": "تواصل معنا",
 
     "links": {
@@ -197,8 +203,426 @@
 
     "address": "المنيا - شارع ابن الخصيب - برج الحمد - بجوار مسجد شاهين",
 
-    "copyright": "© ٢٠٢٦ ڤيلمور جميع الحقوق محفوظة.",
+    "copyright": "© ٢٠٢٦ ڤلمور جميع الحقوق محفوظة.",
     "privacy": "سياسة الخصوصية",
     "terms": "الشروط والأحكام"
+  },
+
+  "addProperty": {
+    "title": "ضيف وحدتك الآن",
+    "subtitle": "سوّق وحدتك مع ڤلمور",
+    "description": "ابعتلنا تفاصيل وحدتك وسيب لفريق ڤلمور مهمة التسويق.",
+    "form": {
+      "ownerInformation": "بيانات المالك",
+      "ownerDescription": "بيانات التواصل مع مالك العقار",
+      "ownerName": "اسم المالك",
+      "ownerNamePlaceholder": "أدخل اسم المالك",
+      "phoneNumber": "رقم الهاتف",
+      "phonePlaceholder": "أدخل رقم الهاتف",
+
+      "propertyInformation": "بيانات العقار",
+      "propertyDescription": "البيانات الأساسية للعقار",
+      "propertyType": "نوع العقار",
+      "selectPropertyType": "اختر نوع العقار",
+      "apartment": "شقة",
+      "villa": "فيلا",
+      "shop": "محل",
+      "office": "مكتب",
+      "land": "أرض",
+
+      "location": "الموقع",
+      "locationPlaceholder": "المدينة، المنطقة، الشارع...",
+      "price": "السعر",
+      "pricePlaceholder": "أدخل سعر العقار",
+      "area": "المساحة (م²)",
+      "areaPlaceholder": "مثال: 150",
+
+      "propertyDetails": "تفاصيل العقار",
+      "propertyDetailsDescription": "تفاصيل إضافية تساعد فريقنا في تسويق العقار",
+      "bedrooms": "غرف النوم",
+      "bedroomsPlaceholder": "عدد غرف النوم",
+      "bathrooms": "الحمامات",
+      "bathroomsPlaceholder": "عدد الحمامات",
+      "floor": "الدور",
+      "floorPlaceholder": "دور العقار",
+      "finishing": "التشطيب",
+      "selectFinishing": "اختر نوع التشطيب",
+      "fullyFinished": "تشطيب كامل",
+      "semiFinished": "نصف تشطيب",
+      "unfinished": "بدون تشطيب",
+      "coreAndShell": "على الطوب",
+
+      "view": "الإطلالة",
+      "viewPlaceholder": "النيل، حديقة، شارع...",
+      "direction": "الاتجاه",
+      "selectDirection": "اختر الاتجاه",
+      "north": "شمال",
+      "south": "جنوب",
+      "east": "شرق",
+      "west": "غرب",
+      "northEast": "شمال شرق",
+      "northWest": "شمال غرب",
+      "southEast": "جنوب شرق",
+      "southWest": "جنوب غرب",
+
+      "paymentInformation": "بيانات الدفع",
+      "paymentDescription": "اختر طريقة دفع العقار",
+      "paymentMethod": "طريقة الدفع",
+      "selectPaymentMethod": "اختر طريقة الدفع",
+      "cash": "كاش",
+      "installments": "تقسيط",
+
+      "installmentDetails": "تفاصيل التقسيط",
+      "downPayment": "المقدم",
+      "duration": "مدة التقسيط، مثال: 5 سنوات",
+      "installmentAmount": "قيمة القسط",
+      "paymentFrequency": "دورية السداد",
+      "monthly": "شهري",
+      "quarterly": "ربع سنوي",
+      "semiAnnually": "نصف سنوي",
+      "annually": "سنوي",
+      "additionalPayments": "دفعات إضافية",
+      "otherInstallmentDetails": "أي تفاصيل أخرى عن التقسيط...",
+
+      "features": "مميزات العقار",
+      "elevator": "أسانسير",
+      "garage": "جراج",
+      "furnished": "مفروش",
+      "negotiable": "السعر قابل للتفاوض",
+
+      "marketingDetails": "معلومات التسويق",
+      "marketingDescription": "معلومات تساعد فريقنا في تسويق العقار",
+      "propertyDescriptionLabel": "وصف العقار",
+      "propertyDescriptionPlaceholder": "اوصف العقار ومميزاته ونسبته في الأرض وموقعه والخدمات القريبة منه...",
+      "internalNotes": "ملاحظات داخلية",
+      "internalNotesPlaceholder": "ملاحظات لفريق التسويق...",
+
+      "propertyImages": "صور العقار",
+      "imagesDescription": "ارفع صورًا واضحة يمكن استخدامها في التسويق",
+      "propertyVideo": "فيديو العقار",
+      "videoDescription": "قم برفع فيديو يوضح العقار.",
+
+      "submit": "إضافة العقار",
+      "sending": "جاري الإرسال...",
+      "success": "تمت إضافة العقار بنجاح."
+    }
+  },
+
+  "properties": {
+    "title": "العقارات",
+    "subtitle": "جميع العقارات المضافة إلى النظام",
+    "noProperties": "لم تتم إضافة أي عقارات حتى الآن",
+    "loadingError": "حدث خطأ أثناء تحميل العقارات",
+    "noImage": "لا توجد صورة متاحة",
+    "property": "عقار",
+    "details": "عرض التفاصيل",
+    "owner": "المالك",
+    "price": "السعر",
+    "currency": "جنيه مصري",
+
+    "filters": "الفلاتر",
+    "searchPlaceholder": "ابحث بالاسم أو الموقع أو نوع العقار...",
+    "allStatuses": "كل الحالات",
+    "allPropertyTypes": "كل أنواع العقارات",
+
+    "sortNewest": "الأحدث",
+    "sortPriceLow": "السعر: من الأقل إلى الأعلى",
+    "sortPriceHigh": "السعر: من الأعلى إلى الأقل",
+
+    "resultsCount": "{count} عقار",
+    "noMatchingProperties": "لا توجد عقارات مطابقة للبحث",
+    "noLocation": "الموقع غير محدد",
+    "noOwner": "المالك غير محدد",
+
+    "viewDetails": "عرض التفاصيل",
+    "edit": "تعديل",
+    "delete": "حذف",
+
+    "deleteTitle": "حذف العقار",
+    "deleteDescription": "هل أنت متأكد من حذف هذا العقار؟ لا يمكن التراجع عن هذا الإجراء.",
+
+    "deletePropertyTitle": "حذف العقار",
+    "deleteConfirm": "هل أنت متأكد من حذف هذا العقار؟ لا يمكن التراجع عن هذا الإجراء.",
+    "confirmDelete": "حذف العقار",
+    "cancel": "إلغاء",
+    "deleting": "جاري الحذف...",
+    "deleteSuccess": "تم حذف العقار بنجاح.",
+    "deleteError": "حدث خطأ أثناء حذف العقار.",
+    "propertyTypes": {
+      "apartment": "شقة",
+      "villa": "فيلا",
+      "shop": "محل",
+      "office": "مكتب",
+      "land": "أرض"
+    },
+
+    "statuses": {
+      "new": "جديد",
+      "pending": "قيد المراجعة",
+      "available": "متاح",
+      "reserved": "محجوز",
+      "sold": "تم البيع"
+    }
+  },
+
+  "editProperty": {
+    "portal": "إدارة العقارات",
+    "title": "تعديل العقار",
+    "subtitle": "قم بتعديل بيانات العقار ثم احفظ التغييرات",
+
+    "basicInformation": "المعلومات الأساسية",
+    "propertyDetails": "تفاصيل العقار",
+    "paymentSection": "تفاصيل الدفع",
+    "statusSection": "حالة العقار",
+    "descriptionSection": "الوصف والملاحظات",
+
+    "ownerName": "اسم المالك",
+    "phone": "رقم الهاتف",
+    "propertyType": "نوع العقار",
+    "location": "الموقع",
+    "price": "السعر",
+    "area": "المساحة",
+    "rooms": "عدد الغرف",
+    "bathrooms": "عدد الحمامات",
+    "floor": "الدور",
+    "finishing": "التشطيب",
+    "view": "الإطلالة",
+    "direction": "الاتجاه",
+
+    "hasElevator": "يوجد مصعد",
+    "hasGarage": "يوجد جراج",
+    "furnished": "مفروش",
+
+    "paymentMethod": "طريقة الدفع",
+    "downPayment": "المقدم",
+    "installmentDuration": "مدة التقسيط",
+    "installmentAmount": "قيمة القسط",
+    "paymentFrequency": "دورية الدفع",
+    "additionalPayments": "دفعات إضافية",
+    "installmentDetails": "تفاصيل التقسيط",
+    "negotiable": "السعر قابل للتفاوض",
+
+    "status": "الحالة",
+
+    "description": "الوصف",
+    "notes": "ملاحظات",
+
+    "saveChanges": "حفظ التغييرات",
+    "cancel": "إلغاء",
+
+    "types": {
+      "apartment": "شقة",
+      "villa": "فيلا",
+      "shop": "محل",
+      "office": "مكتب",
+      "land": "أرض"
+    },
+
+    "finishingTypes": {
+      "fullyFinished": "تشطيب كامل",
+      "semiFinished": "نصف تشطيب",
+      "unfinished": "بدون تشطيب"
+    },
+
+    "directions": {
+      "north": "شمال",
+      "south": "جنوب",
+      "east": "شرق",
+      "west": "غرب"
+    },
+
+    "paymentMethods": {
+      "cash": "كاش",
+      "installments": "تقسيط",
+      "bank": "تمويل بنكي"
+    },
+
+    "statuses": {
+      "new": "جديد",
+      "pending": "قيد المراجعة",
+      "available": "متاح",
+      "reserved": "محجوز",
+      "sold": "تم البيع"
+    }
+  },
+  "PropertyImagesEditor": {
+    "uploadImages": "صور العقار",
+    "currentImages": "الصور الحالية",
+    "newImages": "الصور الجديدة",
+    "addPropertyImages": "إضافة صور للعقار"
+  },
+
+  "propertyDetails": {
+    "title": "تفاصيل العقار",
+    "property": "عقار",
+
+    "propertyInformation": "بيانات العقار",
+    "price": "السعر",
+    "currency": "جنيه",
+    "area": "المساحة",
+    "propertyType": "نوع العقار",
+    "rooms": "غرف النوم",
+    "bathrooms": "الحمامات",
+    "floor": "الدور",
+    "finishing": "التشطيب",
+    "view": "الإطلالة",
+    "direction": "الاتجاه",
+    "status": "الحالة",
+
+    "features": "المميزات",
+    "elevator": "مصعد",
+    "garage": "جراج",
+    "furnished": "مفروش",
+    "negotiable": "قابل للتفاوض",
+
+    "video": "فيديو العقار",
+    "downloadVideo": "تحميل الفيديو",
+
+    "paymentInformation": "بيانات الدفع",
+    "paymentMethod": "طريقة الدفع",
+    "downPayment": "المقدم",
+    "installmentDuration": "مدة التقسيط",
+    "installmentAmount": "قيمة القسط",
+
+    "additionalPayments": "مدفوعات إضافية",
+    "installmentDetails": "تفاصيل التقسيط",
+
+    "ownerInformation": "بيانات المالك",
+    "ownerName": "اسم المالك",
+    "phone": "رقم الهاتف",
+
+    "description": "وصف العقار",
+    "notes": "ملاحظات داخلية",
+
+    "noImage": "لا توجد صور",
+    "imageAlt": "صورة العقار",
+    "downloadImage": "تحميل الصورة",
+    "propertyTypes": {
+      "apartment": "شقة",
+      "villa": "فيلا",
+      "shop": "محل",
+      "office": "مكتب",
+      "land": "أرض"
+    },
+
+    "finishingTypes": {
+      "fully-finished": "تشطيب كامل",
+      "semi-finished": "نصف تشطيب",
+      "unfinished": "بدون تشطيب"
+    },
+
+    "directions": {
+      "north": "شمال",
+      "south": "جنوب",
+      "east": "شرق",
+      "west": "غرب",
+      "northeast": "شمال شرق",
+      "northwest": "شمال غرب",
+      "southeast": "جنوب شرق",
+      "southwest": "جنوب غرب"
+    },
+
+    "paymentMethods": {
+      "cash": "كاش",
+      "installments": "تقسيط"
+    },
+
+    "paymentFrequencyLabel": "دورية السداد",
+
+    "paymentFrequency": {
+      "monthly": "شهري",
+      "quarterly": "ربع سنوي",
+      "semiAnnually": "نصف سنوي",
+      "annually": "سنوي"
+    },
+
+    "statuses": {
+      "new": "جديد",
+      "available": "متاح",
+      "sold": "تم البيع",
+      "reserved": "محجوز",
+      "pending": "قيد المراجعة"
+    }
+  },
+
+  "PropertyVideoEditor": {
+    "propertyVideo": "فيديو العقار",
+    "currentVideo": "الفيديو الحالي",
+    "newVideo": "الفيديو الجديد",
+    "changePropertyVideo": "تغيير فيديو العقار",
+    "addPropertyVideo": "إضافة فيديو للعقار",
+    "selected": "الفيديو المحدد"
+  },
+
+  "companyLogin": {
+    "welcome": "مرحبًا بك في ڤلمور",
+    "description": "إدارة عقارات الشركة ومتابعة جميع البيانات والتفاصيل.",
+    "secureAccess": "دخول آمن ومخصص لفريق الشركة",
+    "portal": "بوابة الشركة",
+    "title": "تسجيل الدخول",
+    "subtitle": "سجّل الدخول للوصول إلى لوحة تحكم الشركة",
+    "email": "البريد الإلكتروني",
+    "emailPlaceholder": "أدخل البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "passwordPlaceholder": "أدخل كلمة المرور",
+    "login": "تسجيل الدخول",
+    "loading": "جاري تسجيل الدخول...",
+    "invalidCredentials": "البريد الإلكتروني أو كلمة المرور غير صحيحة"
+  },
+  "companyDashboard": {
+    "llogo": "ڤلمور",
+    "dashboard": "لوحة التحكم",
+    "properties": "العقارات",
+    "secureCompanyAccess": "دخول آمن للشركة",
+    "quickAction": "إجراء سريع",
+    "addPropertyDescription": "إضافة عقار جديد إلى نظام الشركة.",
+    "manage": "إدارة",
+    "managePropertiesDescription": "عرض وإدارة جميع عقارات الشركة.",
+    "portal": "بوابة الشركة",
+    "title": "لوحة تحكم الشركة",
+    "subtitle": "إدارة العقارات ومتابعة حالتها",
+    "addProperty": "إضافة عقار",
+
+    "logout": "تسجيل الخروج",
+    "totalProperties": "إجمالي العقارات",
+    "allProperties": "جميع العقارات في النظام",
+
+    "pending": "قيد المراجعة",
+    "waitingForReview": "في انتظار المراجعة",
+
+    "available": "متاح",
+    "currentlyAvailable": "متاح حاليًا",
+
+    "sold": "تم البيع",
+    "completedSales": "العقارات التي تم بيعها",
+
+    "recentProperties": "أحدث العقارات",
+    "latestProperties": "آخر العقارات التي تمت إضافتها إلى النظام",
+    "viewAll": "عرض الكل",
+    "noProperties": "لا توجد عقارات متاحة",
+    "loadingError": "حدث خطأ أثناء تحميل العقارات",
+
+    "property": "عقار",
+    "noPrice": "السعر غير محدد",
+    "location": "الموقع",
+    "noLocation": "الموقع غير محدد",
+    "currency": "جنيه",
+    "details": "عرض التفاصيل",
+
+    "propertyTypes": {
+      "apartment": "شقة",
+      "villa": "فيلا",
+      "shop": "محل",
+      "office": "مكتب",
+      "land": "أرض"
+    },
+
+    "statuses": {
+      "pending": "قيد المراجعة",
+      "new": "جديد",
+      "available": "متاح",
+      "sold": "تم البيع",
+      "reserved": "محجوز"
+    }
   }
 }

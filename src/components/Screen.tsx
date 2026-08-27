@@ -56,7 +56,7 @@ export default function Screen({ children }: { children: React.ReactNode }) {
                 initial={{ opacity: 0, scale: 0.5, y: 20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ delay: 0.8, duration: 0.8 }}
-                className=" text-4xl tracking-[8px] font-serif text-white"
+                className=" text-4xl tracking-[8px] font-serif font-bold text-white"
               >
                 VELMOOR
               </motion.h1>

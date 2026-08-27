@@ -11,6 +11,8 @@
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "@headlessui/react": "^2.2.10",
+    "@supabase/ssr": "^0.12.4",
+    "@supabase/supabase-js": "^2.112.3",
     "emailjs": "^5.0.2",
     "framer-motion": "^12.42.2",
     "lucide-react": "^1.26.0",

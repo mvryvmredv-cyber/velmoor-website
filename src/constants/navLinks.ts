@@ -11,10 +11,13 @@ export const navLinks = [
     label: "services",
     href: "#services",
   },
-
   {
     label: "projects",
     href: "#projects",
+  },
+  {
+    label: "addProperty",
+    href: "/add-property",
   },
   {
     label: "contact",

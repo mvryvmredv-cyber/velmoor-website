@@ -5,7 +5,15 @@
 html {
   scroll-behavior: smooth;
 }
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
 
+* {
+  box-sizing: border-box;
+}
 /* Scrollbar */
 
 ::-webkit-scrollbar {
@@ -24,17 +32,38 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: #6f9bd0;
 }
-body {
-  font-family: var(--font-body);
+
+/* =========================
+   Fonts
+========================= */
+/* Arabic */
+html[dir="rtl"] body {
+  font-family: var(--font-tajawal), sans-serif;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-heading);
+/* English */
+html[dir="ltr"] body {
+  font-family: var(--font-body), sans-serif;
+}
+
+/* Arabic headings */
+html[dir="rtl"] h1,
+html[dir="rtl"] h2,
+html[dir="rtl"] h3,
+html[dir="rtl"] h4,
+html[dir="rtl"] h5,
+html[dir="rtl"] h6 {
+  font-family: var(--font-tajawal), sans-serif;
+}
+
+/* English headings */
+html[dir="ltr"] h1,
+html[dir="ltr"] h2,
+html[dir="ltr"] h3,
+html[dir="ltr"] h4,
+html[dir="ltr"] h5,
+html[dir="ltr"] h6 {
+  font-family: var(--font-heading), serif;
 }
 /* Navigation Buttons */
 
@@ -87,4 +116,19 @@ h6 {
   .swiper-button-next {
     right: -10px;
   }
+}
+/* Navbar Arabic */
+html[dir="rtl"] nav {
+  font-family: var(--font-tajawal) !important;
+}
+
+/* Navbar English */
+html[dir="ltr"] nav {
+  font-family: var(--font-body) !important;
+}
+
+/* Logo keeps its own font */
+html[dir="rtl"] nav .navbar-logo,
+html[dir="ltr"] nav .navbar-logo {
+  font-family: var(--font-heading) !important;
 }

@@ -1,4 +1,5 @@
 "use client";
+
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -6,46 +7,64 @@ import { Menu, X, Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { navLinks } from "@/constants/navLinks";
 import { AnimatePresence, motion } from "framer-motion";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import { usePathname } from "next/navigation";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
+
 export default function Navbar() {
   const { resolvedTheme, setTheme } = useTheme();
 
   const t = useTranslations("navbar");
+  const locale = useLocale();
+  const pathname = usePathname();
+
+  const isAddPropertyPage = pathname.includes("/add-property");
+
   const [mounted, setMounted] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
   useEffect(() => {
     setMounted(true);
   }, []);
-
-  const [scrolled, setScrolled] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
-
+    // useEffect(() => {
+    //   setIsOpen(false);
+    // }, [pathname]);
     window.addEventListener("scroll", handleScroll);
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   if (!mounted) return null;
 
+  /*
+   * Add Property page:
+   * Navbar should always look like the scrolled navbar
+   * from the moment the page opens.
+   */
+  const solidNavbar = scrolled || isAddPropertyPage;
+
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-white dark:bg-slate-900 shadow-lg"
-          : "bg-white/20 dark:bg-slate-900/80 backdrop-blur-md"
+        isAddPropertyPage
+          ? "bg-white dark:bg-slate-900 shadow-md"
+          : scrolled
+            ? "bg-white dark:bg-slate-900 shadow-lg"
+            : "bg-white/20 dark:bg-slate-900/80 backdrop-blur-md"
       }`}
     >
       <div
         className={`max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 transition-all duration-300 ${
-          scrolled ? "py-3" : "py-5"
+          solidNavbar ? "py-3" : "py-5"
         }`}
       >
         {/* Logo */}
-
         <div className="flex items-center gap-1">
           <Image
             src={
@@ -60,8 +79,8 @@ export default function Navbar() {
 
           <div className="leading-tight">
             <span
-              className={`text-[25px]   font-serif  tracking-[4px] transition-colors duration-500 ${
-                scrolled
+              className={`navbar-logo text-[25px] font-serif tracking-[4px] transition-colors duration-500 ${
+                solidNavbar
                   ? "text-[#1b3255] dark:text-white"
                   : "text-white hover:text-gray-200"
               }`}
@@ -72,13 +91,19 @@ export default function Navbar() {
         </div>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex items-center gap-10">
+        <ul className="hidden xl:flex items-center gap-4 lg:gap-7 xl:gap-10">
           {navLinks.map((link) => (
-            <li key={link.href}>
+            <li key={link.href} className="whitespace-nowrap">
               <Link
-                href={link.href}
-                className={`text-[17px] font-serif transition duration-300 ${
-                  scrolled
+                href={
+                  link.label === "addProperty"
+                    ? `/${locale}/add-property`
+                    : isAddPropertyPage
+                      ? `/${locale}/${link.href}`
+                      : link.href
+                }
+                className={`text-[14px] lg:text-[15px] xl:text-[17px] transition duration-300 ${
+                  solidNavbar
                     ? "text-[#1b3255] dark:text-white hover:text-blue-700 dark:hover:text-blue-400"
                     : "text-white hover:text-gray-200"
                 }`}
@@ -125,13 +150,16 @@ export default function Navbar() {
             </AnimatePresence>
           </button>
 
+          {/* Language */}
           <div className="hidden md:block">
-            <LanguageSwitcher></LanguageSwitcher>
+            <LanguageSwitcher />
           </div>
 
           {/* Mobile Menu */}
           <button
-            className="md:hidden text-gray-800 dark:text-white"
+            className={`xl:hidden ${
+              solidNavbar ? "text-gray-800 dark:text-white" : "text-white"
+            }`}
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X size={28} /> : <Menu size={28} />}
@@ -141,14 +169,20 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-white dark:bg-slate-900 shadow-lg">
+        <div className="xl:hidden bg-white dark:bg-slate-900 shadow-lg border-t border-gray-100 dark:border-slate-800">
           <ul className="flex flex-col items-center py-6 gap-6">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <Link
-                  href={link.href}
+                  href={
+                    link.label === "addProperty"
+                      ? `/${locale}/add-property`
+                      : isAddPropertyPage
+                        ? `/${locale}/${link.href}`
+                        : link.href
+                  }
                   onClick={() => setIsOpen(false)}
-                  className="text-[#1b3255] dark:text-white hover:text-blue-700 dark:hover:text-blue-400 transition"
+                  className="text-[15px] text-[#1b3255] dark:text-white hover:text-blue-700 dark:hover:text-blue-400 transition duration-300"
                 >
                   {t(link.label)}
                 </Link>

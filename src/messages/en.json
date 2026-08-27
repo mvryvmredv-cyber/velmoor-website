@@ -4,6 +4,7 @@
     "services": "Services",
     "about": "About",
     "projects": "Projects",
+    "addProperty": "Add Your Property Now",
     "contact": "Contact",
     "logo": {
       "title": "VELMOOR"
@@ -173,7 +174,7 @@
   },
   "footer": {
     "description": "Helping you find the perfect property with trust, transparency, and professional service.",
-    "phone": "+20 103 443 9824",
+    "phone": "+20 10 11196903",
 
     "quickLinks": "Quick Links",
 
@@ -203,5 +204,422 @@
     "copyright": "© 2026 Velmoor. All Rights Reserved.",
     "privacy": "Privacy Policy",
     "terms": "Terms & Conditions"
+  },
+
+  "addProperty": {
+    "title": "Add Your Property Now",
+    "subtitle": "List Your Property",
+    "description": "Share your property details with us and let Velmoor take care of the marketing.",
+    "form": {
+      "ownerInformation": "Owner Information",
+      "ownerDescription": "Contact information of the property owner",
+      "ownerName": "Owner Name",
+      "ownerNamePlaceholder": "Enter owner name",
+      "phoneNumber": "Phone Number",
+      "phonePlaceholder": "Enter phone number",
+
+      "propertyInformation": "Property Information",
+      "propertyDescription": "Basic information about the property",
+      "propertyType": "Property Type",
+      "selectPropertyType": "Select property type",
+      "apartment": "Apartment",
+      "villa": "Villa",
+      "shop": "Shop",
+      "office": "Office",
+      "land": "Land",
+
+      "location": "Location",
+      "locationPlaceholder": "City, area, street...",
+      "price": "Price",
+      "pricePlaceholder": "Enter property price",
+      "area": "Area (m²)",
+      "areaPlaceholder": "Example: 150",
+
+      "propertyDetails": "Property Details",
+      "propertyDetailsDescription": "Additional details that help us market the property",
+      "bedrooms": "Bedrooms",
+      "bedroomsPlaceholder": "Number of bedrooms",
+      "bathrooms": "Bathrooms",
+      "bathroomsPlaceholder": "Number of bathrooms",
+      "floor": "Floor",
+      "floorPlaceholder": "Property floor",
+      "finishing": "Finishing",
+      "selectFinishing": "Select finishing",
+      "fullyFinished": "Fully Finished",
+      "semiFinished": "Semi Finished",
+      "unfinished": "Unfinished",
+      "coreAndShell": "Core & Shell",
+      "view": "View",
+      "viewPlaceholder": "Nile, garden, street...",
+      "direction": "Direction",
+      "selectDirection": "Select direction",
+      "north": "North",
+      "south": "South",
+      "east": "East",
+      "west": "West",
+      "northEast": "North East",
+      "northWest": "North West",
+      "southEast": "South East",
+      "southWest": "South West",
+
+      "paymentInformation": "Payment Information",
+      "paymentDescription": "Choose how the property will be paid for",
+      "paymentMethod": "Payment Method",
+      "selectPaymentMethod": "Select payment method",
+      "cash": "Cash",
+      "installments": "Installments",
+
+      "installmentDetails": "Installment Details",
+      "downPayment": "Down Payment",
+      "duration": "Duration e.g. 5 years",
+      "installmentAmount": "Installment Amount",
+      "paymentFrequency": "Payment Frequency",
+      "monthly": "Monthly",
+      "quarterly": "Quarterly",
+      "semiAnnually": "Semi-Annually",
+      "annually": "Annually",
+      "additionalPayments": "Additional Payments",
+      "otherInstallmentDetails": "Other installment details...",
+
+      "features": "Property Features",
+      "elevator": "Elevator",
+      "garage": "Garage",
+      "furnished": "Furnished",
+      "negotiable": "Negotiable Price",
+
+      "marketingDetails": "Marketing Details",
+      "marketingDescription": "Information that helps our team market the property",
+      "propertyDescriptionLabel": "Property Description",
+      "propertyDescriptionPlaceholder": "Describe the property, its advantages, location, nearby services...",
+      "internalNotes": "Internal Notes",
+      "internalNotesPlaceholder": "Internal notes for the marketing team...",
+
+      "propertyImages": "Property Images",
+      "imagesDescription": "Upload clear photos that can be used for marketing",
+      "uploadImages": "Upload Images",
+      "propertyVideo": "Property Video",
+      "videoDescription": "Upload a video showing the property.",
+      "removeVideo": "Remove Video",
+
+      "submit": "Submit Property",
+      "sending": "Sending...",
+      "success": "Property added successfully."
+    }
+  },
+
+  "PropertyVideoEditor": {
+    "propertyVideo": "Property Video",
+    "currentVideo": "Current Video",
+    "newVideo": "New Video",
+    "changePropertyVideo": "Change Property Video",
+    "addPropertyVideo": "Add Property Video",
+    "selected": "Selected Video"
+  },
+  "propertyDetails": {
+    "title": "Property Details",
+    "property": "Property",
+
+    "propertyInformation": "Property Information",
+    "price": "Price",
+    "currency": "EGP",
+    "area": "Area",
+    "propertyType": "Property Type",
+    "rooms": "Bedrooms",
+    "bathrooms": "Bathrooms",
+    "floor": "Floor",
+    "finishing": "Finishing",
+    "view": "View",
+    "direction": "Direction",
+    "status": "Status",
+
+    "features": "Features",
+    "elevator": "Elevator",
+    "garage": "Garage",
+    "furnished": "Furnished",
+    "negotiable": "Negotiable",
+
+    "video": "Property Video",
+    "downloadVideo": "Download Video",
+    "paymentInformation": "Payment Information",
+    "paymentMethod": "Payment Method",
+    "downPayment": "Down Payment",
+    "installmentDuration": "Installment Duration",
+    "installmentAmount": "Installment Amount",
+
+    "additionalPayments": "Additional Payments",
+    "installmentDetails": "Installment Details",
+
+    "ownerInformation": "Owner Information",
+    "ownerName": "Owner Name",
+    "phone": "Phone Number",
+
+    "description": "Property Description",
+    "notes": "Internal Notes",
+
+    "noImage": "No Images Available",
+    "imageAlt": "Property Image",
+    "downloadImage": "Download Image",
+    "propertyTypes": {
+      "apartment": "Apartment",
+      "villa": "Villa",
+      "shop": "Shop",
+      "office": "Office",
+      "land": "Land"
+    },
+
+    "finishingTypes": {
+      "fully_finished": "Fully Finished",
+      "semi_finished": "Semi-Finished",
+      "unfinished": "Unfinished",
+      "core_and_shell": "Core & Shell"
+    },
+
+    "directions": {
+      "north": "North",
+      "south": "South",
+      "east": "East",
+      "west": "West",
+      "northeast": "Northeast",
+      "northwest": "Northwest",
+      "southeast": "Southeast",
+      "southwest": "Southwest"
+    },
+
+    "paymentMethods": {
+      "cash": "Cash",
+      "installments": "Installments"
+    },
+
+    "paymentFrequencyLabel": "Payment Frequency",
+
+    "paymentFrequency": {
+      "monthly": "Monthly",
+      "quarterly": "Quarterly",
+      "semiAnnually": "Semi-Annually",
+      "annually": "Annually"
+    },
+
+    "statuses": {
+      "new": "New",
+      "available": "Available",
+      "sold": "Sold",
+      "reserved": "Reserved",
+      "pending": "Pending Review"
+    }
+  },
+
+  "properties": {
+    "title": "Properties",
+    "subtitle": "All properties added to the system",
+    "noProperties": "No properties have been added yet",
+    "loadingError": "An error occurred while loading properties",
+    "noImage": "No image available",
+    "property": "Property",
+    "details": "View Details",
+    "owner": "Owner",
+    "price": "Price",
+    "currency": "EGP",
+
+    "filters": "Filters",
+    "searchPlaceholder": "Search by name, location or type...",
+    "allStatuses": "All Statuses",
+    "allPropertyTypes": "All Property Types",
+
+    "sortNewest": "Newest",
+    "sortPriceLow": "Price: Low to High",
+    "sortPriceHigh": "Price: High to Low",
+
+    "resultsCount": "{count} properties",
+    "noMatchingProperties": "No properties match your search",
+    "noLocation": "No location",
+    "noOwner": "No owner",
+
+    "viewDetails": "View Details",
+    "edit": "Edit",
+
+    "delete": "Delete",
+    "deleteTitle": "Delete Property",
+    "deleteDescription": "Are you sure you want to delete this property? This action cannot be undone.",
+
+    "deletePropertyTitle": "Delete Property",
+    "deleteConfirm": "Are you sure you want to delete this property? This action cannot be undone.",
+    "confirmDelete": "Delete Property",
+    "cancel": "Cancel",
+    "deleting": "Deleting...",
+    "deleteSuccess": "Property deleted successfully.",
+    "deleteError": "An error occurred while deleting the property.",
+    "propertyTypes": {
+      "apartment": "Apartment",
+      "villa": "Villa",
+      "shop": "Shop",
+      "office": "Office",
+      "land": "Land"
+    },
+
+    "statuses": {
+      "new": "New",
+      "pending": "Pending",
+      "available": "Available",
+      "reserved": "Reserved",
+      "sold": "Sold"
+    }
+  },
+  "editProperty": {
+    "portal": "Property Management",
+    "title": "Edit Property",
+    "subtitle": "Update the property information and save your changes",
+
+    "basicInformation": "Basic Information",
+    "propertyDetails": "Property Details",
+    "paymentSection": "Payment Details",
+    "statusSection": "Property Status",
+    "descriptionSection": "Description & Notes",
+
+    "ownerName": "Owner Name",
+    "phone": "Phone Number",
+    "propertyType": "Property Type",
+    "location": "Location",
+    "price": "Price",
+    "area": "Area",
+    "rooms": "Number of Rooms",
+    "bathrooms": "Number of Bathrooms",
+    "floor": "Floor",
+    "finishing": "Finishing",
+    "view": "View",
+    "direction": "Direction",
+
+    "hasElevator": "Has Elevator",
+    "hasGarage": "Has Garage",
+    "furnished": "Furnished",
+
+    "paymentMethod": "Payment Method",
+    "downPayment": "Down Payment",
+    "installmentDuration": "Installment Duration",
+    "installmentAmount": "Installment Amount",
+    "paymentFrequency": "Payment Frequency",
+    "additionalPayments": "Additional Payments",
+    "installmentDetails": "Installment Details",
+    "negotiable": "Price Negotiable",
+
+    "status": "Status",
+
+    "description": "Description",
+    "notes": "Notes",
+
+    "saveChanges": "Save Changes",
+    "cancel": "Cancel",
+
+    "types": {
+      "apartment": "Apartment",
+      "villa": "Villa",
+      "shop": "Shop",
+      "office": "Office",
+      "land": "Land"
+    },
+
+    "finishingTypes": {
+      "fullyFinished": "Fully Finished",
+      "semiFinished": "Semi-Finished",
+      "unfinished": "Unfinished"
+    },
+
+    "directions": {
+      "north": "North",
+      "south": "South",
+      "east": "East",
+      "west": "West"
+    },
+
+    "paymentMethods": {
+      "cash": "Cash",
+      "installments": "Installments",
+      "bank": "Bank Financing"
+    },
+
+    "statuses": {
+      "new": "New",
+      "pending": "Pending Review",
+      "available": "Available",
+      "reserved": "Reserved",
+      "sold": "Sold"
+    }
+  },
+  "PropertyImagesEditor": {
+    "uploadImages": "Property Images",
+    "currentImages": "Current Images",
+    "newImages": "New Images",
+    "addPropertyImages": "Add Property Images"
+  },
+  "companyLogin": {
+    "portal": "Company Portal",
+    "title": "Welcome Back",
+    "subtitle": "Sign in to manage your properties",
+    "welcome": "Manage your properties with confidence.",
+    "description": "Access your company dashboard and manage properties, owners, and listings from one secure place.",
+    "secureAccess": "Secure company access",
+    "email": "Email Address",
+    "emailPlaceholder": "Enter your company email",
+    "password": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "login": "Sign In",
+    "loading": "Signing in...",
+    "invalidCredentials": "Invalid email or password."
+  },
+
+  "companyDashboard": {
+    "llogo": "velmoor",
+    "dashboard": "Dashboard",
+    "properties": "Properties",
+    "secureCompanyAccess": "Secure company access",
+    "quickAction": "Quick Action",
+    "addPropertyDescription": "Add a new property to the company system.",
+    "manage": "Manage",
+    "managePropertiesDescription": "View and manage all company properties.",
+    "portal": "Company Portal",
+    "title": "Company Dashboard",
+    "subtitle": "Manage your properties and track their status",
+    "addProperty": "Add Property",
+
+    "logout": "Logout",
+    "totalProperties": "Total Properties",
+    "allProperties": "All properties in the system",
+
+    "pending": "Pending",
+    "waitingForReview": "Waiting for review",
+
+    "available": "Available",
+    "currentlyAvailable": "Currently available",
+
+    "sold": "Sold",
+    "completedSales": "Completed sales",
+
+    "recentProperties": "Recent Properties",
+    "latestProperties": "Latest properties added to the system",
+    "viewAll": "View All",
+    "noProperties": "No properties available",
+    "loadingError": "An error occurred while loading properties",
+
+    "property": "Property",
+    "noPrice": "No price",
+    "location": "Location",
+    "noLocation": "No location",
+    "currency": "EGP",
+    "details": "View Details",
+
+    "propertyTypes": {
+      "apartment": "Apartment",
+      "villa": "Villa",
+      "shop": "Shop",
+      "office": "Office",
+      "land": "Land"
+    },
+
+    "statuses": {
+      "pending": "Pending",
+      "new": "New",
+      "available": "Available",
+      "sold": "Sold",
+      "reserved": "Reserved"
+    }
   }
 }
