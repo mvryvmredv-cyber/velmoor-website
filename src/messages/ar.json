@@ -299,8 +299,6 @@
 
       "propertyImages": "صور العقار",
       "imagesDescription": "ارفع صورًا واضحة يمكن استخدامها في التسويق",
-      "propertyVideo": "فيديو العقار",
-      "videoDescription": "قم برفع فيديو يوضح العقار.",
 
       "submit": "إضافة العقار",
       "sending": "جاري الإرسال...",
@@ -475,9 +473,6 @@
     "furnished": "مفروش",
     "negotiable": "قابل للتفاوض",
 
-    "video": "فيديو العقار",
-    "downloadVideo": "تحميل الفيديو",
-
     "paymentInformation": "بيانات الدفع",
     "paymentMethod": "طريقة الدفع",
     "downPayment": "المقدم",
@@ -543,15 +538,6 @@
       "reserved": "محجوز",
       "pending": "قيد المراجعة"
     }
-  },
-
-  "PropertyVideoEditor": {
-    "propertyVideo": "فيديو العقار",
-    "currentVideo": "الفيديو الحالي",
-    "newVideo": "الفيديو الجديد",
-    "changePropertyVideo": "تغيير فيديو العقار",
-    "addPropertyVideo": "إضافة فيديو للعقار",
-    "selected": "الفيديو المحدد"
   },
 
   "companyLogin": {

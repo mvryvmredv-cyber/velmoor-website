@@ -4,7 +4,6 @@ import { supabase } from "@/lib/supabase";
 export const runtime = "nodejs";
 
 const MAX_IMAGE_SIZE = 10 * 1024 * 1024; // 10 MB
-const MAX_VIDEO_SIZE = 100 * 1024 * 1024; // 100 MB
 
 const ALLOWED_IMAGE_TYPES = [
   "image/jpeg",
@@ -13,13 +12,10 @@ const ALLOWED_IMAGE_TYPES = [
   "image/webp",
 ];
 
-const ALLOWED_VIDEO_TYPES = ["video/mp4", "video/webm", "video/quicktime"];
-
 export async function POST(request: Request) {
   console.log("🔥 POST /api/properties CALLED");
 
   const uploadedImagePaths: string[] = [];
-  let uploadedVideoPath: string | null = null;
 
   try {
     const formData = await request.formData();
@@ -45,8 +41,14 @@ export async function POST(request: Request) {
     const view = String(formData.get("view") || "").trim();
     const direction = String(formData.get("direction") || "").trim();
 
+    // =========================
+    // PAYMENT
+    // =========================
+
     const paymentMethod = String(formData.get("payment_method") || "").trim();
+
     const isInstallment = paymentMethod === "installments";
+
     const downPayment = String(formData.get("down_payment") || "").trim();
 
     const installmentDuration = String(
@@ -69,12 +71,8 @@ export async function POST(request: Request) {
       formData.get("installment_details") || "",
     ).trim();
 
-    const description = String(formData.get("description") || "").trim();
-
-    const notes = String(formData.get("notes") || "").trim();
-
     // =========================
-    // BOOLEAN DATA
+    // FEATURES
     // =========================
 
     const hasElevator = String(formData.get("has_elevator")) === "true";
@@ -86,7 +84,15 @@ export async function POST(request: Request) {
     const negotiable = String(formData.get("negotiable")) === "true";
 
     // =========================
-    // REQUIRED
+    // MARKETING
+    // =========================
+
+    const description = String(formData.get("description") || "").trim();
+
+    const notes = String(formData.get("notes") || "").trim();
+
+    // =========================
+    // REQUIRED FIELDS
     // =========================
 
     if (!name || !phone || !propertyType || !location) {
@@ -100,20 +106,14 @@ export async function POST(request: Request) {
     }
 
     // =========================
-    // FILES
+    // GET IMAGE FILES
     // =========================
 
     const imageFiles = formData
       .getAll("images")
       .filter((item): item is File => item instanceof File && item.size > 0);
 
-    const videoItem = formData.get("video");
-
-    const videoFile =
-      videoItem instanceof File && videoItem.size > 0 ? videoItem : null;
-
-    console.log("📸 Images:", imageFiles.length);
-    console.log("🎥 Video:", videoFile?.name || "No video");
+    console.log("📸 Images received:", imageFiles.length);
 
     // =========================
     // VALIDATE IMAGES
@@ -142,32 +142,6 @@ export async function POST(request: Request) {
     }
 
     // =========================
-    // VALIDATE VIDEO
-    // =========================
-
-    if (videoFile) {
-      if (!ALLOWED_VIDEO_TYPES.includes(videoFile.type)) {
-        return NextResponse.json(
-          {
-            success: false,
-            message: `Unsupported video type: ${videoFile.type}`,
-          },
-          { status: 400 },
-        );
-      }
-
-      if (videoFile.size > MAX_VIDEO_SIZE) {
-        return NextResponse.json(
-          {
-            success: false,
-            message: `Video is larger than 100 MB.`,
-          },
-          { status: 400 },
-        );
-      }
-    }
-
-    // =========================
     // PROPERTY ID
     // =========================
 
@@ -185,17 +159,25 @@ export async function POST(request: Request) {
       const fileName = `${propertyId}/${crypto.randomUUID()}.${extension}`;
 
       const arrayBuffer = await image.arrayBuffer();
+
       const buffer = Buffer.from(arrayBuffer);
 
       const { error: uploadError } = await supabase.storage
         .from("property-images")
         .upload(fileName, buffer, {
-          contentType: image.type || "image/jpeg",
+          contentType: image.type,
           upsert: false,
         });
 
       if (uploadError) {
         console.error("❌ Image upload error:", uploadError);
+
+        // Delete previously uploaded images
+        if (uploadedImagePaths.length > 0) {
+          await supabase.storage
+            .from("property-images")
+            .remove(uploadedImagePaths);
+        }
 
         return NextResponse.json(
           {
@@ -206,53 +188,20 @@ export async function POST(request: Request) {
         );
       }
 
-      const { data } = supabase.storage
+      uploadedImagePaths.push(fileName);
+
+      const { data: publicUrlData } = supabase.storage
         .from("property-images")
         .getPublicUrl(fileName);
 
-      imageUrls.push(data.publicUrl);
-      uploadedImagePaths.push(fileName);
-    }
-    // =========================
-    // UPLOAD VIDEO
-    // =========================
-
-    let videoUrl: string | null = null;
-
-    if (videoFile) {
-      const extension = videoFile.name.split(".").pop()?.toLowerCase() || "mp4";
-
-      const videoPath = `${propertyId}/${crypto.randomUUID()}.${extension}`;
-
-      const arrayBuffer = await videoFile.arrayBuffer();
-      const buffer = Buffer.from(arrayBuffer);
-
-      const { error: videoUploadError } = await supabase.storage
-        .from("property-videos")
-        .upload(videoPath, buffer, {
-          contentType: videoFile.type || "video/mp4",
-          upsert: false,
-        });
-
-      if (videoUploadError) {
-        console.error("❌ Video upload error:", videoUploadError);
-
-        return NextResponse.json(
-          {
-            success: false,
-            message: `Failed to upload video: ${videoUploadError.message}`,
-          },
-          { status: 500 },
-        );
+      if (!publicUrlData?.publicUrl) {
+        throw new Error(`Could not generate public URL for image: ${fileName}`);
       }
 
-      const { data } = supabase.storage
-        .from("property-videos")
-        .getPublicUrl(videoPath);
-
-      videoUrl = data.publicUrl;
-      uploadedVideoPath = videoPath;
+      imageUrls.push(publicUrlData.publicUrl);
     }
+
+    console.log("✅ Images uploaded:", imageUrls.length);
 
     // =========================
     // INSERT PROPERTY
@@ -269,7 +218,6 @@ export async function POST(request: Request) {
 
         location,
 
-        // Database columns are TEXT
         price: price || null,
         area: area || null,
         rooms: rooms || null,
@@ -280,7 +228,6 @@ export async function POST(request: Request) {
         view: view || null,
         direction: direction || null,
 
-        // Database columns are TEXT
         has_elevator: String(hasElevator),
         has_garage: String(hasGarage),
         furnished: String(furnished),
@@ -305,22 +252,45 @@ export async function POST(request: Request) {
         negotiable,
 
         description,
-
         notes,
 
+        // Save image URLs
         images: JSON.stringify(imageUrls),
-
-        video: videoUrl,
 
         status: "pending",
       },
     ]);
 
+    // =========================
+    // DATABASE ERROR
+    // =========================
+
     if (propertyError) {
       console.error("❌ Property insert error:", propertyError);
 
-      throw new Error(`Failed to save property: ${propertyError.message}`);
+      // Remove uploaded images because property wasn't saved
+      if (uploadedImagePaths.length > 0) {
+        const { error: cleanupError } = await supabase.storage
+          .from("property-images")
+          .remove(uploadedImagePaths);
+
+        if (cleanupError) {
+          console.error("⚠️ Image cleanup error:", cleanupError);
+        }
+      }
+
+      return NextResponse.json(
+        {
+          success: false,
+          message: `Failed to save property: ${propertyError.message}`,
+        },
+        { status: 500 },
+      );
     }
+
+    // =========================
+    // SUCCESS
+    // =========================
 
     console.log("✅ PROPERTY CREATED:", propertyId);
 
@@ -330,7 +300,7 @@ export async function POST(request: Request) {
         message: "Property added successfully.",
         propertyId,
         images: imageUrls,
-        video: videoUrl,
+        status: "pending",
       },
       { status: 201 },
     );
@@ -338,30 +308,16 @@ export async function POST(request: Request) {
     console.error("🔥 API ERROR:", error);
 
     // =========================
-    // CLEANUP IMAGES
+    // CLEANUP UPLOADED IMAGES
     // =========================
 
     if (uploadedImagePaths.length > 0) {
-      const { error: imageCleanupError } = await supabase.storage
+      const { error: cleanupError } = await supabase.storage
         .from("property-images")
         .remove(uploadedImagePaths);
 
-      if (imageCleanupError) {
-        console.error("⚠️ Image cleanup error:", imageCleanupError);
-      }
-    }
-
-    // =========================
-    // CLEANUP VIDEO
-    // =========================
-
-    if (uploadedVideoPath) {
-      const { error: videoCleanupError } = await supabase.storage
-        .from("property-videos")
-        .remove([uploadedVideoPath]);
-
-      if (videoCleanupError) {
-        console.error("⚠️ Video cleanup error:", videoCleanupError);
+      if (cleanupError) {
+        console.error("⚠️ Image cleanup error:", cleanupError);
       }
     }
 

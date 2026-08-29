@@ -90,7 +90,7 @@ export default async function CompanyLayout({ children, params }: Props) {
             <div>
               <p className="font-bold tracking-[3px]">VELMOOR</p>
 
-              {/* <p className="text-xs text-white/50">{t("portal")}</p> */}
+              <p className="text-xs text-white/50">{t("portal")}</p>
             </div>
           </header>
 

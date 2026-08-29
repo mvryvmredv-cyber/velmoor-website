@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import ImageUploader from "@/components/AddProperty/ImageUploader";
-import VideoUploader from "@/components/AddProperty/VideoUploader";
 
 type FormData = {
   name: string;
@@ -34,11 +33,9 @@ type FormData = {
 
   description: string;
   notes: string;
-  video: string;
 };
 
 const initialFormData: FormData = {
-  video: "",
   name: "",
   phone: "",
   property_type: "",
@@ -73,9 +70,8 @@ export default function AddPropertyForm() {
   const t = useTranslations("addProperty.form");
 
   const [formData, setFormData] = useState<FormData>(initialFormData);
-
   const [images, setImages] = useState<File[]>([]);
-  const [video, setVideo] = useState<File | null>(null);
+
   const [resetUploaders, setResetUploaders] = useState(false);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
@@ -133,10 +129,8 @@ export default function AddPropertyForm() {
 
     setFormData((current) => ({
       ...current,
-
       property_type: value,
 
-      // تنظيف التفاصيل الخاصة بالنوع السابق
       rooms: "",
       bathrooms: "",
       floor: "",
@@ -161,7 +155,6 @@ export default function AddPropertyForm() {
       ...current,
       payment_method: value,
 
-      // لو اختار كاش نمسح تفاصيل التقسيط
       ...(value === "cash"
         ? {
             down_payment: "",
@@ -194,11 +187,8 @@ export default function AddPropertyForm() {
       /* PROPERTY */
 
       data.append("property-type", formData.property_type);
-
       data.append("location", formData.location);
-
       data.append("price", formData.price.replace(/,/g, ""));
-
       data.append("area", formData.area);
 
       /* DETAILS */
@@ -241,15 +231,12 @@ export default function AddPropertyForm() {
       data.append("description", formData.description);
 
       data.append("notes", formData.notes);
+
       /* IMAGES */
 
       images.forEach((image) => {
         data.append("images", image);
       });
-      /* VIDEO */
-      if (video) {
-        data.append("video", video);
-      }
 
       /* API */
 
@@ -264,6 +251,8 @@ export default function AddPropertyForm() {
         throw new Error(result.message || "Something went wrong");
       }
 
+      /* SUCCESS */
+
       setMessage(t("success"));
 
       setFormData({
@@ -271,14 +260,14 @@ export default function AddPropertyForm() {
       });
 
       setImages([]);
-      setVideo(null);
+
       setResetUploaders(true);
 
       setTimeout(() => {
         setResetUploaders(false);
       }, 100);
     } catch (error) {
-      console.error(error);
+      console.error("Add property error:", error);
 
       setMessage(
         error instanceof Error ? error.message : "Failed to add property.",
@@ -438,6 +427,7 @@ export default function AddPropertyForm() {
       </section>
 
       {/* ================= PROPERTY DETAILS ================= */}
+
       {formData.property_type && (
         <section className="rounded-2xl border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6 shadow-sm">
           <div className="mb-6">
@@ -451,7 +441,7 @@ export default function AddPropertyForm() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {/* ================= APARTMENT / VILLA ================= */}
+            {/* RESIDENTIAL */}
 
             {isResidential && (
               <>
@@ -538,41 +528,37 @@ export default function AddPropertyForm() {
               </>
             )}
 
-            {/* ================= SHOP ================= */}
+            {/* SHOP */}
 
             {isShop && (
-              <>
-                <input
-                  type="number"
-                  name="floor"
-                  value={formData.floor}
-                  onChange={handleChange}
-                  min="0"
-                  placeholder={t("floorPlaceholder")}
-                  className="w-full rounded-xl border border-gray-200 dark:border-slate-600 bg-gray-50 dark:bg-slate-700 px-4 py-3 outline-none"
-                />
-              </>
+              <input
+                type="number"
+                name="floor"
+                value={formData.floor}
+                onChange={handleChange}
+                min="0"
+                placeholder={t("floorPlaceholder")}
+                className="w-full rounded-xl border border-gray-200 dark:border-slate-600 bg-gray-50 dark:bg-slate-700 px-4 py-3 outline-none"
+              />
             )}
 
-            {/* ================= OFFICE ================= */}
+            {/* OFFICE */}
 
             {isOffice && (
-              <>
-                <input
-                  type="number"
-                  name="floor"
-                  value={formData.floor}
-                  onChange={handleChange}
-                  min="0"
-                  placeholder={t("floorPlaceholder")}
-                  className="w-full rounded-xl border border-gray-200 dark:border-slate-600 bg-gray-50 dark:bg-slate-700 px-4 py-3 outline-none"
-                />
-              </>
+              <input
+                type="number"
+                name="floor"
+                value={formData.floor}
+                onChange={handleChange}
+                min="0"
+                placeholder={t("floorPlaceholder")}
+                className="w-full rounded-xl border border-gray-200 dark:border-slate-600 bg-gray-50 dark:bg-slate-700 px-4 py-3 outline-none"
+              />
             )}
 
-            {/* ================= LAND ================= */}
+            {/* LAND */}
 
-            {isLand && <></>}
+            {isLand && null}
           </div>
         </section>
       )}
@@ -641,7 +627,7 @@ export default function AddPropertyForm() {
                 value={formData.installment_amount}
                 onChange={handleChange}
                 placeholder={t("installmentAmount")}
-                className="w-full rounded-xl border border-gray-200 dark:border-slate-600 bg-white dark:bg-slate-700 px-4 py-3 outline-none"
+                className="w-full rounded-xl border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-700 px-4 py-3 outline-none"
               />
 
               <select
@@ -692,8 +678,6 @@ export default function AddPropertyForm() {
           </h2>
 
           <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
-            {/* Elevator */}
-
             {(isResidential || isOffice) && (
               <label className="flex items-center gap-3 p-4 rounded-xl bg-gray-50 dark:bg-slate-700 cursor-pointer">
                 <input
@@ -707,8 +691,6 @@ export default function AddPropertyForm() {
                 <span>{t("elevator")}</span>
               </label>
             )}
-
-            {/* Garage */}
 
             {(isResidential || isOffice || isShop) && (
               <label className="flex items-center gap-3 p-4 rounded-xl bg-gray-50 dark:bg-slate-700 cursor-pointer">
@@ -724,8 +706,6 @@ export default function AddPropertyForm() {
               </label>
             )}
 
-            {/* Furnished */}
-
             {(isResidential || isOffice) && (
               <label className="flex items-center gap-3 p-4 rounded-xl bg-gray-50 dark:bg-slate-700 cursor-pointer">
                 <input
@@ -739,8 +719,6 @@ export default function AddPropertyForm() {
                 <span>{t("furnished")}</span>
               </label>
             )}
-
-            {/* Negotiable */}
 
             <label className="flex items-center gap-3 p-4 rounded-xl bg-gray-50 dark:bg-slate-700 cursor-pointer">
               <input
@@ -797,7 +775,7 @@ export default function AddPropertyForm() {
               onChange={handleChange}
               rows={4}
               placeholder={t("internalNotesPlaceholder")}
-              className="w-full rounded-xl border border-gray-200 dark:border-slate-600 bg-gray-50 dark:bg-slate-700 px-4 py-3 outline-none resize-none"
+              className="w-full rounded-xl border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-700 px-4 py-3 outline-none resize-none"
             />
           </div>
         </div>
@@ -817,22 +795,6 @@ export default function AddPropertyForm() {
         </div>
 
         <ImageUploader onImagesChange={setImages} reset={resetUploaders} />
-      </section>
-
-      {/* ================= VIDEO ================= */}
-
-      <section className="rounded-2xl border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6 shadow-sm">
-        <div className="mb-6">
-          <h2 className="text-xl font-bold text-[#1b3255] dark:text-white">
-            {t("propertyVideo")}
-          </h2>
-
-          <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
-            {t("videoDescription")}
-          </p>
-        </div>
-
-        <VideoUploader onVideoChange={setVideo} reset={resetUploaders} />
       </section>
 
       {/* ================= SUBMIT ================= */}

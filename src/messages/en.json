@@ -297,9 +297,6 @@
       "propertyImages": "Property Images",
       "imagesDescription": "Upload clear photos that can be used for marketing",
       "uploadImages": "Upload Images",
-      "propertyVideo": "Property Video",
-      "videoDescription": "Upload a video showing the property.",
-      "removeVideo": "Remove Video",
 
       "submit": "Submit Property",
       "sending": "Sending...",
@@ -307,14 +304,6 @@
     }
   },
 
-  "PropertyVideoEditor": {
-    "propertyVideo": "Property Video",
-    "currentVideo": "Current Video",
-    "newVideo": "New Video",
-    "changePropertyVideo": "Change Property Video",
-    "addPropertyVideo": "Add Property Video",
-    "selected": "Selected Video"
-  },
   "propertyDetails": {
     "title": "Property Details",
     "property": "Property",
@@ -338,8 +327,6 @@
     "furnished": "Furnished",
     "negotiable": "Negotiable",
 
-    "video": "Property Video",
-    "downloadVideo": "Download Video",
     "paymentInformation": "Payment Information",
     "paymentMethod": "Payment Method",
     "downPayment": "Down Payment",
