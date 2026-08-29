@@ -2,7 +2,7 @@ export const projects = [
   {
     id: "project1",
     images: ["/assets/image/proj1(1).jpg", "/assets/image/proj1(2).jpg"],
-    video: "/assets/video/proj1.mp4",
+    video: "/assets/video/proj1.mov",
   },
   {
     id: "project2",
@@ -17,7 +17,7 @@ export const projects = [
   {
     id: "project3",
     images: ["/assets/image/proj3(1).jpg", "/assets/image/proj3(2).jpg"],
-    video: "/assets/video/proj3.mp4",
+    video: "/assets/video/proj3.mov",
   },
   {
     id: "project4",
@@ -27,7 +27,7 @@ export const projects = [
       "/assets/image/proj4(3).jpg",
       "/assets/image/proj4(4).jpg",
     ],
-    video: "/assets/video/proj4.mp4",
+    video: "/assets/video/proj4.mov",
   },
   {
     id: "project5",
@@ -37,7 +37,7 @@ export const projects = [
       "/assets/image/proj5(3).jpg",
       "/assets/image/proj5(4).jpg",
     ],
-    video: "/assets/video/proj5.mp4",
+    video: "/assets/video/proj5.mov",
   },
   {
     id: "project6",
@@ -46,7 +46,7 @@ export const projects = [
       "/assets/image/proj6(2).jpg",
       "/assets/image/proj6(3).jpg",
     ],
-    video: "/assets/video/proj6.mp4",
+    video: "/assets/video/proj6.mov",
   },
   {
     id: "project7",
@@ -55,6 +55,6 @@ export const projects = [
       "/assets/image/proj7(3).jpg",
       "/assets/image/proj7(4).jpg",
     ],
-    video: "/assets/video/proj7.mp4",
+    video: "/assets/video/proj7.mov",
   },
 ];
