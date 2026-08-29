@@ -219,427 +219,429 @@ export default async function EditPropertyPage({ params }: Props) {
       }
     }
 
-    return (
-      <main className="min-h-screen bg-gray-50 dark:bg-slate-950 pt-28 pb-16">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Header */}
-          <div className="mb-8">
-            <p className="text-sm text-[#1b3255] dark:text-blue-400 font-medium">
-              {t("portal")}
-            </p>
+    redirect(`/${locale}/company/properties/${id}`);
+  }
 
-            <h1 className="text-3xl md:text-4xl font-bold text-[#1b3255] dark:text-white mt-2">
-              {t("title")}
-            </h1>
+  return (
+    <main className="min-h-screen bg-gray-50 dark:bg-slate-950 pt-28 pb-16">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="mb-8">
+          <p className="text-sm text-[#1b3255] dark:text-blue-400 font-medium">
+            {t("portal")}
+          </p>
 
-            <p className="mt-2 text-gray-500 dark:text-gray-400">
-              {t("subtitle")}
-            </p>
-          </div>
+          <h1 className="text-3xl md:text-4xl font-bold text-[#1b3255] dark:text-white mt-2">
+            {t("title")}
+          </h1>
 
-          <form
-            action={updateProperty}
-            className="bg-white dark:bg-slate-900 rounded-3xl p-6 md:p-8 shadow-sm border border-gray-100 dark:border-slate-800"
-          >
-            {/* ================= BASIC INFORMATION ================= */}
+          <p className="mt-2 text-gray-500 dark:text-gray-400">
+            {t("subtitle")}
+          </p>
+        </div>
 
-            <section className="mb-10">
-              <h2 className="text-xl font-bold text-[#1b3255] dark:text-white mb-5">
-                {t("basicInformation")}
-              </h2>
+        <form
+          action={updateProperty}
+          className="bg-white dark:bg-slate-900 rounded-3xl p-6 md:p-8 shadow-sm border border-gray-100 dark:border-slate-800"
+        >
+          {/* ================= BASIC INFORMATION ================= */}
 
-              <div className="grid md:grid-cols-2 gap-5">
-                <Input
-                  label={t("ownerName")}
-                  name="name"
-                  defaultValue={property.name ?? ""}
-                />
+          <section className="mb-10">
+            <h2 className="text-xl font-bold text-[#1b3255] dark:text-white mb-5">
+              {t("basicInformation")}
+            </h2>
 
-                <Input
-                  label={t("phone")}
-                  name="phone"
-                  defaultValue={property.phone ?? ""}
-                />
+            <div className="grid md:grid-cols-2 gap-5">
+              <Input
+                label={t("ownerName")}
+                name="name"
+                defaultValue={property.name ?? ""}
+              />
 
-                <Select
-                  label={t("propertyType")}
-                  name="property-type"
-                  defaultValue={property["property-type"] ?? ""}
-                  options={[
-                    ["apartment", t("types.apartment")],
-                    ["villa", t("types.villa")],
-                    ["shop", t("types.shop")],
-                    ["office", t("types.office")],
-                    ["land", t("types.land")],
-                  ]}
-                />
-
-                <Input
-                  label={t("location")}
-                  name="location"
-                  defaultValue={property.location ?? ""}
-                />
-              </div>
-            </section>
-
-            {/* ================= PROPERTY DETAILS ================= */}
-
-            <section className="mb-10">
-              <h2 className="text-xl font-bold text-[#1b3255] dark:text-white mb-5">
-                {t("propertyDetails")}
-              </h2>
-
-              <div className="grid md:grid-cols-2 gap-5">
-                <Input
-                  label={t("price")}
-                  name="price"
-                  type="number"
-                  defaultValue={property.price ?? ""}
-                />
-
-                <Input
-                  label={t("area")}
-                  name="area"
-                  type="number"
-                  defaultValue={property.area ?? ""}
-                />
-
-                <Input
-                  label={t("rooms")}
-                  name="rooms"
-                  type="number"
-                  defaultValue={property.rooms ?? ""}
-                />
-
-                <Input
-                  label={t("bathrooms")}
-                  name="bathrooms"
-                  type="number"
-                  defaultValue={property.bathrooms ?? ""}
-                />
-
-                <Input
-                  label={t("floor")}
-                  name="floor"
-                  type="number"
-                  defaultValue={property.floor ?? ""}
-                />
-
-                <Select
-                  label={t("finishing")}
-                  name="finishing"
-                  defaultValue={property.finishing ?? ""}
-                  options={[
-                    ["fully-finished", t("finishingTypes.fullyFinished")],
-                    ["semi-finished", t("finishingTypes.semiFinished")],
-                    ["unfinished", t("finishingTypes.unfinished")],
-                  ]}
-                />
-
-                <Input
-                  label={t("view")}
-                  name="view"
-                  defaultValue={property.view ?? ""}
-                />
-
-                <Select
-                  label={t("direction")}
-                  name="direction"
-                  defaultValue={property.direction ?? ""}
-                  options={[
-                    ["north", t("directions.north")],
-                    ["south", t("directions.south")],
-                    ["east", t("directions.east")],
-                    ["west", t("directions.west")],
-                  ]}
-                />
-              </div>
-
-              {/* Boolean Options */}
-
-              <div className="grid md:grid-cols-3 gap-4 mt-6">
-                <BooleanSelect
-                  label={t("hasElevator")}
-                  name="has_elevator"
-                  value={Boolean(property.has_elevator)}
-                />
-
-                <BooleanSelect
-                  label={t("hasGarage")}
-                  name="has_garage"
-                  value={Boolean(property.has_garage)}
-                />
-
-                <BooleanSelect
-                  label={t("furnished")}
-                  name="furnished"
-                  value={Boolean(property.furnished)}
-                />
-              </div>
-            </section>
-
-            {/* ================= PAYMENT ================= */}
-
-            <section className="mb-10">
-              <h2 className="text-xl font-bold text-[#1b3255] dark:text-white mb-5">
-                {t("paymentSection")}
-              </h2>
-
-              <div className="grid md:grid-cols-2 gap-5">
-                <Select
-                  label={t("paymentMethod")}
-                  name="payment_method"
-                  defaultValue={property.payment_method ?? ""}
-                  options={[
-                    ["cash", t("paymentMethods.cash")],
-                    ["installments", t("paymentMethods.installments")],
-                    ["bank", t("paymentMethods.bank")],
-                  ]}
-                />
-
-                <Input
-                  label={t("downPayment")}
-                  name="down_payment"
-                  type="number"
-                  defaultValue={property.down_payment ?? ""}
-                />
-
-                <Input
-                  label={t("installmentDuration")}
-                  name="installment_duration"
-                  defaultValue={property.installment_duration ?? ""}
-                />
-
-                <Input
-                  label={t("installmentAmount")}
-                  name="installment_amount"
-                  type="number"
-                  defaultValue={property.installment_amount ?? ""}
-                />
-
-                <Input
-                  label={t("paymentFrequency")}
-                  name="payment_frequency"
-                  defaultValue={property.payment_frequency ?? ""}
-                />
-
-                <Input
-                  label={t("additionalPayments")}
-                  name="additional_payments"
-                  defaultValue={property.additional_payments ?? ""}
-                />
-              </div>
-
-              <div className="mt-5">
-                <Textarea
-                  label={t("installmentDetails")}
-                  name="installment_details"
-                  defaultValue={property.installment_details ?? ""}
-                />
-              </div>
-
-              <div className="mt-5">
-                <BooleanSelect
-                  label={t("negotiable")}
-                  name="negotiable"
-                  value={Boolean(property.negotiable)}
-                />
-              </div>
-            </section>
-
-            {/* ================= STATUS ================= */}
-
-            <section className="mb-10">
-              <h2 className="text-xl font-bold text-[#1b3255] dark:text-white mb-5">
-                {t("statusSection")}
-              </h2>
+              <Input
+                label={t("phone")}
+                name="phone"
+                defaultValue={property.phone ?? ""}
+              />
 
               <Select
-                label={t("status")}
-                name="status"
-                defaultValue={property.status ?? "pending"}
+                label={t("propertyType")}
+                name="property-type"
+                defaultValue={property["property-type"] ?? ""}
                 options={[
-                  ["new", t("statuses.new")],
-                  ["pending", t("statuses.pending")],
-                  ["available", t("statuses.available")],
-                  ["reserved", t("statuses.reserved")],
-                  ["sold", t("statuses.sold")],
+                  ["apartment", t("types.apartment")],
+                  ["villa", t("types.villa")],
+                  ["shop", t("types.shop")],
+                  ["office", t("types.office")],
+                  ["land", t("types.land")],
                 ]}
               />
-            </section>
 
-            {/* ================= DESCRIPTION ================= */}
-
-            <section className="mb-10">
-              <h2 className="text-xl font-bold text-[#1b3255] dark:text-white mb-5">
-                {t("descriptionSection")}
-              </h2>
-
-              <div className="space-y-5">
-                <Textarea
-                  label={t("description")}
-                  name="description"
-                  defaultValue={property.description ?? ""}
-                />
-
-                <Textarea
-                  label={t("notes")}
-                  name="notes"
-                  defaultValue={property.notes ?? ""}
-                />
-              </div>
-            </section>
-            <PropertyImagesEditor
-              images={
-                Array.isArray(property.images)
-                  ? property.images
-                  : property.images
-                    ? JSON.parse(property.images)
-                    : []
-              }
-            />
-            <PropertyVideoEditor video={property.video ?? null} />
-            {/* ================= BUTTONS ================= */}
-
-            <div className="flex flex-col sm:flex-row gap-3 pt-5 border-t border-gray-100 dark:border-slate-800">
-              <button
-                type="submit"
-                className="flex-1 rounded-xl bg-[#1b3255] text-white py-3 font-semibold hover:bg-[#142844] transition"
-              >
-                {t("saveChanges")}
-              </button>
-
-              <a
-                href={`/${locale}/company/properties/${id}`}
-                className="flex-1 text-center rounded-xl border border-gray-200 dark:border-slate-700 py-3 font-semibold text-[#1b3255] dark:text-white hover:bg-gray-50 dark:hover:bg-slate-800 transition"
-              >
-                {t("cancel")}
-              </a>
+              <Input
+                label={t("location")}
+                name="location"
+                defaultValue={property.location ?? ""}
+              />
             </div>
-          </form>
-        </div>
-      </main>
-    );
-  }
+          </section>
 
-  /* ================= INPUT ================= */
+          {/* ================= PROPERTY DETAILS ================= */}
 
-  function Input({
-    label,
-    name,
-    defaultValue,
-    type = "text",
-  }: {
-    label: string;
-    name: string;
-    defaultValue: string | number | null;
-    type?: string;
-  }) {
-    return (
-      <div>
-        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-          {label}
-        </label>
+          <section className="mb-10">
+            <h2 className="text-xl font-bold text-[#1b3255] dark:text-white mb-5">
+              {t("propertyDetails")}
+            </h2>
 
-        <input
-          name={name}
-          type={type}
-          defaultValue={defaultValue ?? ""}
-          className="w-full h-12 rounded-xl border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 px-4 outline-none focus:ring-2 focus:ring-[#1b3255]/20 dark:text-white"
-        />
+            <div className="grid md:grid-cols-2 gap-5">
+              <Input
+                label={t("price")}
+                name="price"
+                type="number"
+                defaultValue={property.price ?? ""}
+              />
+
+              <Input
+                label={t("area")}
+                name="area"
+                type="number"
+                defaultValue={property.area ?? ""}
+              />
+
+              <Input
+                label={t("rooms")}
+                name="rooms"
+                type="number"
+                defaultValue={property.rooms ?? ""}
+              />
+
+              <Input
+                label={t("bathrooms")}
+                name="bathrooms"
+                type="number"
+                defaultValue={property.bathrooms ?? ""}
+              />
+
+              <Input
+                label={t("floor")}
+                name="floor"
+                type="number"
+                defaultValue={property.floor ?? ""}
+              />
+
+              <Select
+                label={t("finishing")}
+                name="finishing"
+                defaultValue={property.finishing ?? ""}
+                options={[
+                  ["fully-finished", t("finishingTypes.fullyFinished")],
+                  ["semi-finished", t("finishingTypes.semiFinished")],
+                  ["unfinished", t("finishingTypes.unfinished")],
+                ]}
+              />
+
+              <Input
+                label={t("view")}
+                name="view"
+                defaultValue={property.view ?? ""}
+              />
+
+              <Select
+                label={t("direction")}
+                name="direction"
+                defaultValue={property.direction ?? ""}
+                options={[
+                  ["north", t("directions.north")],
+                  ["south", t("directions.south")],
+                  ["east", t("directions.east")],
+                  ["west", t("directions.west")],
+                ]}
+              />
+            </div>
+
+            {/* Boolean Options */}
+
+            <div className="grid md:grid-cols-3 gap-4 mt-6">
+              <BooleanSelect
+                label={t("hasElevator")}
+                name="has_elevator"
+                value={Boolean(property.has_elevator)}
+              />
+
+              <BooleanSelect
+                label={t("hasGarage")}
+                name="has_garage"
+                value={Boolean(property.has_garage)}
+              />
+
+              <BooleanSelect
+                label={t("furnished")}
+                name="furnished"
+                value={Boolean(property.furnished)}
+              />
+            </div>
+          </section>
+
+          {/* ================= PAYMENT ================= */}
+
+          <section className="mb-10">
+            <h2 className="text-xl font-bold text-[#1b3255] dark:text-white mb-5">
+              {t("paymentSection")}
+            </h2>
+
+            <div className="grid md:grid-cols-2 gap-5">
+              <Select
+                label={t("paymentMethod")}
+                name="payment_method"
+                defaultValue={property.payment_method ?? ""}
+                options={[
+                  ["cash", t("paymentMethods.cash")],
+                  ["installments", t("paymentMethods.installments")],
+                  ["bank", t("paymentMethods.bank")],
+                ]}
+              />
+
+              <Input
+                label={t("downPayment")}
+                name="down_payment"
+                type="number"
+                defaultValue={property.down_payment ?? ""}
+              />
+
+              <Input
+                label={t("installmentDuration")}
+                name="installment_duration"
+                defaultValue={property.installment_duration ?? ""}
+              />
+
+              <Input
+                label={t("installmentAmount")}
+                name="installment_amount"
+                type="number"
+                defaultValue={property.installment_amount ?? ""}
+              />
+
+              <Input
+                label={t("paymentFrequency")}
+                name="payment_frequency"
+                defaultValue={property.payment_frequency ?? ""}
+              />
+
+              <Input
+                label={t("additionalPayments")}
+                name="additional_payments"
+                defaultValue={property.additional_payments ?? ""}
+              />
+            </div>
+
+            <div className="mt-5">
+              <Textarea
+                label={t("installmentDetails")}
+                name="installment_details"
+                defaultValue={property.installment_details ?? ""}
+              />
+            </div>
+
+            <div className="mt-5">
+              <BooleanSelect
+                label={t("negotiable")}
+                name="negotiable"
+                value={Boolean(property.negotiable)}
+              />
+            </div>
+          </section>
+
+          {/* ================= STATUS ================= */}
+
+          <section className="mb-10">
+            <h2 className="text-xl font-bold text-[#1b3255] dark:text-white mb-5">
+              {t("statusSection")}
+            </h2>
+
+            <Select
+              label={t("status")}
+              name="status"
+              defaultValue={property.status ?? "pending"}
+              options={[
+                ["new", t("statuses.new")],
+                ["pending", t("statuses.pending")],
+                ["available", t("statuses.available")],
+                ["reserved", t("statuses.reserved")],
+                ["sold", t("statuses.sold")],
+              ]}
+            />
+          </section>
+
+          {/* ================= DESCRIPTION ================= */}
+
+          <section className="mb-10">
+            <h2 className="text-xl font-bold text-[#1b3255] dark:text-white mb-5">
+              {t("descriptionSection")}
+            </h2>
+
+            <div className="space-y-5">
+              <Textarea
+                label={t("description")}
+                name="description"
+                defaultValue={property.description ?? ""}
+              />
+
+              <Textarea
+                label={t("notes")}
+                name="notes"
+                defaultValue={property.notes ?? ""}
+              />
+            </div>
+          </section>
+          <PropertyImagesEditor
+            images={
+              Array.isArray(property.images)
+                ? property.images
+                : property.images
+                  ? JSON.parse(property.images)
+                  : []
+            }
+          />
+          <PropertyVideoEditor video={property.video ?? null} />
+          {/* ================= BUTTONS ================= */}
+
+          <div className="flex flex-col sm:flex-row gap-3 pt-5 border-t border-gray-100 dark:border-slate-800">
+            <button
+              type="submit"
+              className="flex-1 rounded-xl bg-[#1b3255] text-white py-3 font-semibold hover:bg-[#142844] transition"
+            >
+              {t("saveChanges")}
+            </button>
+
+            <a
+              href={`/${locale}/company/properties/${id}`}
+              className="flex-1 text-center rounded-xl border border-gray-200 dark:border-slate-700 py-3 font-semibold text-[#1b3255] dark:text-white hover:bg-gray-50 dark:hover:bg-slate-800 transition"
+            >
+              {t("cancel")}
+            </a>
+          </div>
+        </form>
       </div>
-    );
-  }
+    </main>
+  );
+}
 
-  /* ================= SELECT ================= */
+/* ================= INPUT ================= */
 
-  function Select({
-    label,
-    name,
-    defaultValue,
-    options,
-  }: {
-    label: string;
-    name: string;
-    defaultValue: string;
-    options: string[][];
-  }) {
-    return (
-      <div>
-        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-          {label}
-        </label>
+function Input({
+  label,
+  name,
+  defaultValue,
+  type = "text",
+}: {
+  label: string;
+  name: string;
+  defaultValue: string | number | null;
+  type?: string;
+}) {
+  return (
+    <div>
+      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+        {label}
+      </label>
 
-        <select
-          name={name}
-          defaultValue={defaultValue}
-          className="w-full h-12 rounded-xl border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 px-4 outline-none dark:text-white"
-        >
-          <option value="">---</option>
+      <input
+        name={name}
+        type={type}
+        defaultValue={defaultValue ?? ""}
+        className="w-full h-12 rounded-xl border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 px-4 outline-none focus:ring-2 focus:ring-[#1b3255]/20 dark:text-white"
+      />
+    </div>
+  );
+}
 
-          {options.map(([value, label]) => (
-            <option key={value} value={value}>
-              {label}
-            </option>
-          ))}
-        </select>
-      </div>
-    );
-  }
+/* ================= SELECT ================= */
 
-  /* ================= BOOLEAN SELECT ================= */
+function Select({
+  label,
+  name,
+  defaultValue,
+  options,
+}: {
+  label: string;
+  name: string;
+  defaultValue: string;
+  options: string[][];
+}) {
+  return (
+    <div>
+      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+        {label}
+      </label>
 
-  function BooleanSelect({
-    label,
-    name,
-    value,
-  }: {
-    label: string;
-    name: string;
-    value: boolean;
-  }) {
-    return (
-      <div>
-        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-          {label}
-        </label>
+      <select
+        name={name}
+        defaultValue={defaultValue}
+        className="w-full h-12 rounded-xl border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 px-4 outline-none dark:text-white"
+      >
+        <option value="">---</option>
 
-        <select
-          name={name}
-          defaultValue={String(value)}
-          className="w-full h-12 rounded-xl border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 px-4 outline-none dark:text-white"
-        >
-          <option value="true">نعم</option>
-          <option value="false">لا</option>
-        </select>
-      </div>
-    );
-  }
+        {options.map(([value, label]) => (
+          <option key={value} value={value}>
+            {label}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
+}
 
-  /* ================= TEXTAREA ================= */
+/* ================= BOOLEAN SELECT ================= */
 
-  function Textarea({
-    label,
-    name,
-    defaultValue,
-  }: {
-    label: string;
-    name: string;
-    defaultValue: string | null;
-  }) {
-    return (
-      <div>
-        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-          {label}
-        </label>
+function BooleanSelect({
+  label,
+  name,
+  value,
+}: {
+  label: string;
+  name: string;
+  value: boolean;
+}) {
+  return (
+    <div>
+      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+        {label}
+      </label>
 
-        <textarea
-          name={name}
-          defaultValue={defaultValue ?? ""}
-          rows={5}
-          className="w-full rounded-xl border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 p-4 outline-none focus:ring-2 focus:ring-[#1b3255]/20 dark:text-white resize-none"
-        />
-      </div>
-    );
-  }
+      <select
+        name={name}
+        defaultValue={String(value)}
+        className="w-full h-12 rounded-xl border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 px-4 outline-none dark:text-white"
+      >
+        <option value="true">نعم</option>
+        <option value="false">لا</option>
+      </select>
+    </div>
+  );
+}
+
+/* ================= TEXTAREA ================= */
+
+function Textarea({
+  label,
+  name,
+  defaultValue,
+}: {
+  label: string;
+  name: string;
+  defaultValue: string | null;
+}) {
+  return (
+    <div>
+      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+        {label}
+      </label>
+
+      <textarea
+        name={name}
+        defaultValue={defaultValue ?? ""}
+        rows={5}
+        className="w-full rounded-xl border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 p-4 outline-none focus:ring-2 focus:ring-[#1b3255]/20 dark:text-white resize-none"
+      />
+    </div>
+  );
 }

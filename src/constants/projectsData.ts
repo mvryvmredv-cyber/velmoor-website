@@ -12,7 +12,7 @@ export const projects = [
       "/assets/image/proj2(3).jpg",
       "/assets/image/proj2(4).jpg",
     ],
-    video: "/assets/video/proj2.mp4",
+    video: "/assets/video/proj 2.mov",
   },
   {
     id: "project3",
