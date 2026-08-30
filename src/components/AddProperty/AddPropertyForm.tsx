@@ -491,40 +491,6 @@ export default function AddPropertyForm() {
 
                   <option value="core_and_shell">{t("coreAndShell")}</option>
                 </select>
-
-                <input
-                  type="text"
-                  name="view"
-                  value={formData.view}
-                  onChange={handleChange}
-                  placeholder={t("viewPlaceholder")}
-                  className="w-full rounded-xl border border-gray-200 dark:border-slate-600 bg-gray-50 dark:bg-slate-700 px-4 py-3 outline-none"
-                />
-
-                <select
-                  name="direction"
-                  value={formData.direction}
-                  onChange={handleChange}
-                  className="w-full rounded-xl border border-gray-200 dark:border-slate-600 bg-gray-50 dark:bg-slate-700 px-4 py-3 outline-none"
-                >
-                  <option value="">{t("selectDirection")}</option>
-
-                  <option value="north">{t("north")}</option>
-
-                  <option value="south">{t("south")}</option>
-
-                  <option value="east">{t("east")}</option>
-
-                  <option value="west">{t("west")}</option>
-
-                  <option value="northeast">{t("northEast")}</option>
-
-                  <option value="northwest">{t("northWest")}</option>
-
-                  <option value="southeast">{t("southEast")}</option>
-
-                  <option value="southwest">{t("southWest")}</option>
-                </select>
               </>
             )}
 
@@ -646,15 +612,6 @@ export default function AddPropertyForm() {
 
                 <option value="annually">{t("annually")}</option>
               </select>
-
-              <input
-                type="text"
-                name="additional_payments"
-                value={formData.additional_payments}
-                onChange={handleChange}
-                placeholder={t("additionalPayments")}
-                className="md:col-span-2 w-full rounded-xl border border-gray-200 dark:border-slate-600 bg-white dark:bg-slate-700 px-4 py-3 outline-none"
-              />
 
               <textarea
                 name="installment_details"
