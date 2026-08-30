@@ -31,6 +31,7 @@ export default function AddPropertyPage() {
           </div>
 
           <div className="bg-white dark:bg-slate-900 rounded-3xl shadow-lg p-5 md:p-8">
+            {/* Add form */}
             <AddPropertyForm />
           </div>
         </div>
