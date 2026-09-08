@@ -172,36 +172,7 @@ export default async function PropertyDetailsPage({ params }: Props) {
           </div>
         )}
 
-        {/* ================= VIDEO ================= */}
-
-        {property.video && (
-          <section className="bg-white dark:bg-slate-900 rounded-3xl p-6 md:p-8 shadow-sm mb-6">
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-5">
-              <h2 className="text-2xl font-bold text-[#1b3255] dark:text-white">
-                {t("video")}
-              </h2>
-
-              <a
-                href={`/api/properties/download?url=${encodeURIComponent(
-                  property.video,
-                )}`}
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#1b3255] text-white px-5 py-3 text-sm font-semibold hover:bg-[#142844] transition"
-              >
-                ⬇️ {t("downloadVideo")}
-              </a>
-            </div>
-
-            <video
-              controls
-              playsInline
-              preload="metadata"
-              className="w-full max-h-[600px] rounded-2xl bg-black"
-              src={property.video}
-            >
-              Your browser does not support the video tag.
-            </video>
-          </section>
-        )}
+      
 
         {/* ================= BASIC PROPERTY INFORMATION ================= */}
 

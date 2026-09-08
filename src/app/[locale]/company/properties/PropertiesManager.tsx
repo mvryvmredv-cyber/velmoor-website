@@ -125,29 +125,79 @@ export default function PropertiesManager({ properties, locale }: Props) {
         return;
       }
 
-      // Delete property
-      const { error } = await supabase
-        .from("properties")
-        .delete()
-        .eq("id", propertyToDelete);
+      const propertyId = String(propertyToDelete);
 
-      if (error) {
-        console.error("Delete property error:", error);
+      // ========================================
+      // 1. GET PROPERTY IMAGES FROM STORAGE
+      // ========================================
+
+      const { data: files, error: listError } = await supabase.storage
+        .from("property-images")
+        .list(propertyId);
+
+      if (listError) {
+        console.error("Error getting property images:", listError);
         setDeleteError(t("deleteError"));
         return;
       }
 
-      // Remove property from current list
+      // ========================================
+      // 2. DELETE PROPERTY IMAGES FROM STORAGE
+      // ========================================
+
+      if (files && files.length > 0) {
+        const imagePaths = files.map((file) => `${propertyId}/${file.name}`);
+
+        const { error: storageDeleteError } = await supabase.storage
+          .from("property-images")
+          .remove(imagePaths);
+
+        if (storageDeleteError) {
+          console.error("Error deleting property images:", storageDeleteError);
+
+          setDeleteError(t("deleteError"));
+          return;
+        }
+      }
+
+      // ========================================
+      // 3. DELETE PROPERTY FROM DATABASE
+      // ========================================
+
+      const { error: propertyDeleteError } = await supabase
+        .from("properties")
+        .delete()
+        .eq("id", propertyToDelete);
+
+      if (propertyDeleteError) {
+        console.error("Delete property error:", propertyDeleteError);
+
+        setDeleteError(t("deleteError"));
+        return;
+      }
+
+      // ========================================
+      // 4. REMOVE PROPERTY FROM CURRENT LIST
+      // ========================================
+
       setPropertyList((current) =>
         current.filter((property) => property.id !== propertyToDelete),
       );
 
-      // Close modal
+      // ========================================
+      // 5. CLOSE DELETE MODAL
+      // ========================================
+
       setPropertyToDelete(null);
 
-      // Show success message
+      // ========================================
+      // 6. SHOW SUCCESS MESSAGE
+      // ========================================
+
       setSuccessMessage(t("deleteSuccess"));
+
       router.refresh();
+
       // Hide success message
       setTimeout(() => {
         setSuccessMessage("");
