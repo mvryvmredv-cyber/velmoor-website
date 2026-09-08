@@ -3,8 +3,9 @@ import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 
 const intlMiddleware = createMiddleware({
-  locales: ["en", "ar"],
-  defaultLocale: "en",
+  locales: ["ar", "en"],
+  defaultLocale: "ar",
+  localeDetection: false,
 });
 
 export async function proxy(request: NextRequest) {
