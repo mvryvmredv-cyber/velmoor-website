@@ -32,9 +32,9 @@ export async function GET(request: Request) {
     }
 
     // السماح فقط بالـ buckets الخاصة بالعقارات
-    const isAllowedBucket =
-      url.pathname.includes("/storage/v1/object/public/property-images/") ||
-      url.pathname.includes("/storage/v1/object/public/property-videos/");
+    const isAllowedBucket = url.pathname.includes(
+      "/storage/v1/object/public/property-images/",
+    );
 
     if (!isAllowedBucket) {
       return NextResponse.json(

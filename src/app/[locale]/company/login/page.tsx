@@ -1,15 +1,18 @@
 "use client";
+
 import Link from "next/link";
 import { FormEvent, useState } from "react";
 import { Eye, EyeOff, LockKeyhole, Mail, Globe } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import { useRouter } from "next/navigation";
 import { useTranslations, useLocale } from "next-intl";
+import ThemeToggle from "@/components/ThemeToggle";
 
 export default function CompanyLoginPage() {
   const router = useRouter();
   const t = useTranslations("companyLogin");
   const locale = useLocale();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -45,7 +48,7 @@ export default function CompanyLoginPage() {
     console.log("USER:", data.user?.email);
     console.log("SESSION EXISTS:", !!data.session);
 
-    // نجيب الـ session الحالية للتأكد إنها اتسجلت
+    // Get current session to make sure it was saved
     const { data: sessionData } = await supabase.auth.getSession();
 
     console.log("CURRENT SESSION:", sessionData.session);
@@ -61,6 +64,15 @@ export default function CompanyLoginPage() {
 
   return (
     <main className="min-h-screen bg-[#f5f7fa] dark:bg-slate-950 flex items-center justify-center px-4">
+      {/* ========================= */}
+      {/* TOP CONTROLS */}
+      {/* ========================= */}
+
+      {/* Dark / Light Mode */}
+      <div className="absolute top-6 left-6">
+        <ThemeToggle />
+      </div>
+
       {/* Language Button */}
       <Link
         href={`/${locale === "ar" ? "en" : "ar"}/company/login`}
@@ -70,6 +82,11 @@ export default function CompanyLoginPage() {
 
         <span>{locale === "ar" ? "English" : "العربية"}</span>
       </Link>
+
+      {/* ========================= */}
+      {/* LOGIN CARD */}
+      {/* ========================= */}
+
       <div className="w-full max-w-5xl bg-white dark:bg-slate-900 rounded-[32px] overflow-hidden shadow-2xl grid md:grid-cols-2">
         {/* Left */}
         <div className="hidden md:flex relative bg-[#1b3255] min-h-[600px] p-10 text-white flex-col justify-between overflow-hidden">
@@ -134,7 +151,7 @@ export default function CompanyLoginPage() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder={t("emailPlaceholder")}
-                  className="w-full h-13 rounded-xl border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 pl-11 pr-4 outline-none focus:ring-2 focus:ring-[#1b3255]/20"
+                  className="w-full h-13 rounded-xl border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 text-gray-900 dark:text-white pl-11 pr-4 outline-none focus:ring-2 focus:ring-[#1b3255]/20"
                 />
               </div>
             </div>
@@ -157,13 +174,13 @@ export default function CompanyLoginPage() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder={t("passwordPlaceholder")}
-                  className="w-full h-13 rounded-xl border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 pl-11 pr-12 outline-none focus:ring-2 focus:ring-[#1b3255]/20"
+                  className="w-full h-13 rounded-xl border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 text-gray-900 dark:text-white pl-11 pr-12 outline-none focus:ring-2 focus:ring-[#1b3255]/20"
                 />
 
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200"
                 >
                   {showPassword ? <EyeOff size={19} /> : <Eye size={19} />}
                 </button>
@@ -172,7 +189,7 @@ export default function CompanyLoginPage() {
 
             {/* Error */}
             {error && (
-              <div className="rounded-xl bg-red-50 border border-red-200 text-red-600 text-sm p-3">
+              <div className="rounded-xl bg-red-50 dark:bg-red-950/30 border border-red-200 dark:border-red-900 text-red-600 dark:text-red-400 text-sm p-3">
                 {error}
               </div>
             )}

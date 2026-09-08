@@ -12,6 +12,7 @@ import {
   Home,
   Globe,
 } from "lucide-react";
+import ThemeToggle from "@/components/ThemeToggle";
 
 type Props = {
   params: Promise<{
@@ -62,12 +63,6 @@ export default async function CompanyDashboard({ params }: Props) {
                     <Home size={16} />
 
                     <span>{t("portal")}</span>
-
-                    {/* <span>/</span> */}
-
-                    {/* <span className="text-[#1b3255] dark:text-blue-400">
-                      {t("dashboard")}
-                    </span> */}
                   </div>
 
                   <h1 className="text-3xl md:text-4xl font-bold text-[#1b3255] dark:text-white">
@@ -88,6 +83,8 @@ export default async function CompanyDashboard({ params }: Props) {
 
                   <span>{locale === "ar" ? "English" : "العربية"}</span>
                 </Link>
+                {/* dark mode toggle */}
+                <ThemeToggle />
               </div>
             </header>
 
