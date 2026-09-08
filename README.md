@@ -1,173 +1,179 @@
 # Velmoor Website
 
-A modern, responsive, bilingual real estate marketing website built with
-Next.js, React, TypeScript, and Tailwind CSS.
+A modern, responsive, bilingual real estate marketing website built with **Next.js, React, TypeScript, and Tailwind CSS**.
 
-## 📌 About The Project
+Velmoor is designed to showcase real estate properties and projects while providing a smooth experience for visitors and an administrative interface for managing property listings.
 
-Velmoor is a real estate marketing website designed to help users
-discover residential, commercial, and investment opportunities across Egypt.
+---
 
-The website provides a modern user experience with responsive layouts,
-animations, project galleries, bilingual content, dark mode, and
-interactive UI components.
+## 📌 About the Project
+
+Velmoor is a real estate marketing platform focused on residential, commercial, and investment opportunities in Egypt.
+
+The website provides:
+
+- Modern responsive UI
+- Arabic and English localization
+- RTL/LTR support
+- Light and dark themes
+- Property listings and details
+- Project galleries
+- Image viewing and lightbox support
+- Property management dashboard
+- Property creation, editing, and deletion
+- Image upload and storage
+- Contact and inquiry functionality
+- SEO configuration
+- Smooth animations and interactive components
+
+---
 
 ## 🚀 Technologies
 
-- Next.js 16
-- React 19
-- TypeScript
-- Tailwind CSS 4
-- JavaScript
-- HTML5
-- CSS3
+- **Next.js 16**
+- **React 19**
+- **TypeScript**
+- **Tailwind CSS 4**
+- **JavaScript**
+- **HTML5**
+- **CSS3**
+- **Supabase**
+
+---
 
 ## 📚 Libraries & Packages
 
 ### Next.js
 
-Used as the main framework for the website.
+Used as the main application framework.
 
-It provides:
+Main capabilities used in the project:
 
 - App Router
-- Routing
+- Dynamic routes
 - Server and Client Components
+- API Routes
 - SEO metadata
 - Image optimization
 - Static and dynamic rendering
-- Production build and deployment support
+- Production builds and deployment
 
 ### React
 
-Used to build the website UI using reusable components.
+Used to build the user interface through reusable and interactive components.
 
 ### TypeScript
 
-Used to provide static typing and improve code reliability,
-maintainability, and development experience.
+Used for static typing, improved code reliability, maintainability, and developer experience.
 
 ### Tailwind CSS
 
-Used for styling and responsive design.
+Used for responsive styling and UI development.
 
 It provides utility classes for:
 
 - Layout
 - Spacing
-- Colors
 - Typography
+- Colors
 - Responsive breakpoints
 - Dark mode
-- Animations and transitions
+- Animations
+- Transitions
 
 ### Framer Motion
 
-Used to create smooth animations and interactive effects.
-
-Examples:
+Used to create animations and interactive effects, including:
 
 - Section reveal animations
 - Scroll animations
 - Card animations
 - Hover effects
 - Navbar animations
-- Theme icon transitions
+- Theme transitions
 
 ### Swiper
 
-Used to create interactive sliders and carousels.
-
-Examples:
+Used for interactive sliders and carousels, including:
 
 - Hero slider
 - Project image sliders
-- Navigation between slides
+- Navigation controls
 - Pagination
 
 ### next-intl
 
-Used to implement internationalization (i18n).
+Used for internationalization (i18n).
 
 The website supports:
 
 - Arabic
 - English
-
-It also handles:
-
-- Translated content
-- RTL layout for Arabic
-- LTR layout for English
-- Localized navigation
+- RTL layout
+- LTR layout
+- Localized routes
+- Translated interface content
 
 ### next-themes
 
-Used to implement theme switching.
+Used to implement light and dark themes.
 
-Features:
+Features include:
 
 - Light mode
 - Dark mode
-- Theme persistence
 - System theme support
+- Theme persistence
+
+### Supabase
+
+Used as the backend platform for application data and file storage.
+
+The project uses Supabase for:
+
+- Property database
+- Property management
+- Property image storage
+- Authentication
+- Database queries
+- Storage operations
 
 ### Lucide React
 
-Used for modern SVG icons throughout the website.
-
-Examples:
-
-- Menu
-- Close
-- Moon
-- Sun
-- Check
-- Navigation icons
+Used for modern SVG icons throughout the interface.
 
 ### React Icons
 
-Used to provide additional icon sets when needed.
+Used for additional icon sets when required.
 
 ### Yet Another React Lightbox
 
-Used to display project images in an interactive lightbox.
+Used to display property and project images in an interactive lightbox.
 
 Users can:
 
 - Open images
 - View images in a larger format
-- Navigate through project galleries
+- Navigate through galleries
 - View images in full-screen mode
 
 ### @emailjs/browser
 
-Used to send emails directly from the frontend without requiring
-a dedicated backend email server.
-
-It can be used for:
-
-- Contact forms
-- Sending user inquiries
-- Sending messages to the company email
-
-### EmailJS
-
-Used for email-related functionality and integration.
+Used for frontend email functionality and sending contact or inquiry messages.
 
 ### @headlessui/react
 
-Used for accessible and unstyled UI components that can be customized
-using Tailwind CSS.
+Used for accessible, unstyled UI components that can be customized with Tailwind CSS.
 
 ### react-country-flag
 
-Used to display country flags, mainly for language selection.
+Used for displaying country flags in the language selection interface.
 
 ### Babel React Compiler
 
-Used as part of the React compilation setup to optimize React applications
-and improve rendering performance.
+Used as part of the React compilation setup to improve application compilation and rendering performance.
+
+---
 
 ## 🌍 Localization
 
@@ -176,69 +182,117 @@ Velmoor supports two languages:
 ### Arabic 🇪🇬
 
 - RTL direction
-- Tajawal font
 - Arabic translations
+- Tajawal font
 
 ### English 🇬🇧
 
 - LTR direction
-- Manrope font
 - English translations
+- Manrope font
+- Cormorant Garamond for selected headings and branding
 
-The language can be changed using the language switcher.
+The language can be changed using the website language switcher.
+
+---
 
 ## 🔤 Fonts
 
-### Arabic Font
+### Arabic
 
 **Tajawal**
 
-Used for Arabic content across the website.
+Used throughout the Arabic interface.
 
-### English Body Font
+### English Body
 
 **Manrope**
 
-Used for English body text and navigation content.
+Used for English body text and navigation.
 
-### English Heading Font
+### English Headings
 
 **Cormorant Garamond**
 
-Used for English headings and the website logo styling.
+Used for selected English headings and branding elements.
 
 Fonts are loaded using Next.js `next/font`.
+
+---
 
 ## 🎨 Main Features
 
 - Responsive design
 - Arabic / English support
 - RTL / LTR support
-- Dark / Light mode
+- Light / Dark mode
 - Animated UI
 - Hero image slider
+- Property listings
+- Property details pages
 - Project galleries
 - Image lightbox
+- Property management dashboard
+- Add property functionality
+- Edit property functionality
+- Delete property functionality
+- Supabase database integration
+- Supabase Storage integration
+- Image upload and management
 - Contact functionality
 - Email integration
 - SEO optimization
 - Mobile navigation
 - Smooth scrolling
-- Modern real estate UI
-- Optimized images using Next.js Image
 - Reusable React components
+- Optimized images using Next.js Image
 
-## 📱 Responsive Design
+---
 
-The website is designed to work across:
+## 🏢 Property Management
 
-- Desktop
-- Laptop
-- Tablet
-- Mobile
+The website includes a company dashboard for managing property listings.
 
-Different layouts and interactions are applied depending on the
-screen size to provide a better user experience.
+Authorized users can:
+
+- View properties
+- Add new properties
+- Edit existing properties
+- Delete properties
+- Upload property images
+- Manage property information
+- Manage payment information
+- Update property status
+
+Property information can include:
+
+- Property name
+- Phone number
+- Property type
+- Location
+- Price
+- Area
+- Rooms
+- Bathrooms
+- Floor
+- Finishing
+- View
+- Direction
+- Elevator availability
+- Garage availability
+- Furnished status
+- Payment method
+- Down payment
+- Installment duration
+- Installment amount
+- Payment frequency
+- Additional payments
+- Negotiation availability
+- Description
+- Notes
+- Images
+
+---
 
 ## 🗂️ Main Website Sections
 
@@ -249,14 +303,14 @@ Provides:
 - Website navigation
 - Logo
 - Language switcher
-- Dark / Light mode
-- Mobile menu
+- Light / Dark mode
+- Mobile navigation menu
 
 ### Hero
 
 Provides:
 
-- Full-screen project imagery
+- Full-screen imagery
 - Slider functionality
 - Navigation controls
 - Project introduction
@@ -267,7 +321,7 @@ Provides:
 Provides:
 
 - Company introduction
-- Company experience
+- Company information
 - Company features
 - Animated content
 - Responsive image and text layout
@@ -291,13 +345,13 @@ Provides:
 - Feature cards
 - Icons
 - Scroll animations
-- Responsive timeline/layout
+- Responsive layouts
 
 ### Contact
 
 Provides:
 
-- Contact information
+- Company contact information
 - Contact form
 - Email functionality
 - Communication options
@@ -311,9 +365,11 @@ Provides:
 - Contact information
 - Social links
 
+---
+
 ## ✨ Animations
 
-Animations are implemented using Framer Motion.
+Animations are implemented using **Framer Motion**.
 
 The website includes:
 
@@ -323,24 +379,29 @@ The website includes:
 - Hover animations
 - Scroll-based reveal effects
 - Interactive icon animations
+- Theme transitions
 
-Animations are designed to improve the user experience without
-affecting the website's usability.
+Animations are designed to improve the user experience while maintaining usability.
+
+---
 
 ## 🌓 Dark Mode
 
-Dark mode is implemented using `next-themes`.
+Dark mode is implemented using **next-themes**.
 
 Users can switch between:
 
 - Light Mode
 - Dark Mode
+- System Theme
 
-The theme is preserved when navigating through the website.
+The selected theme is preserved while navigating through the website.
+
+---
 
 ## 🔍 SEO
 
-The website includes SEO configuration using Next.js metadata.
+The project includes SEO configuration using Next.js metadata.
 
 SEO features include:
 
@@ -352,36 +413,146 @@ SEO features include:
 - Robots configuration
 - Sitemap
 - Robots.txt
-- Localized metadata for Arabic and English
+- Localized metadata
+- Arabic and English SEO content
+
+---
 
 ## 🖼️ Image Handling
 
-Images are handled using Next.js `Image` component.
+Images are handled using the Next.js `Image` component and Supabase Storage.
 
-Benefits include:
+The project uses image optimization features such as:
 
-- Image optimization
 - Responsive images
 - Lazy loading
-- Better performance
 - Automatic image sizing
+- Optimized image delivery
+
+Property images are stored in the Supabase Storage `property-images` bucket.
+
+---
 
 ## 📧 Email Integration
 
-Email functionality is implemented using EmailJS.
+Email functionality is implemented using **EmailJS**.
 
-The project includes:
+It can be used for:
 
-- `@emailjs/browser`
-- `emailjs`
+- Contact forms
+- Customer inquiries
+- Sending messages to the company email
 
-This allows the website to send contact or inquiry messages
-without building a custom backend email service.
+The frontend can communicate with EmailJS without requiring a dedicated custom email server.
+
+---
+
+## 📱 Responsive Design
+
+The website is designed to work across:
+
+- Desktop
+- Laptop
+- Tablet
+- Mobile
+
+Different layouts and interactions are applied based on screen size to provide a consistent user experience across devices.
+
+---
 
 ## 🛠️ Installation
 
-Clone the repository:
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/mvryvmredv-cyber/velmoor-website.git
 ```
+
+### 2. Navigate to the project directory
+
+```bash
+cd velmoor-website
+```
+
+### 3. Install dependencies
+
+```bash
+npm install
+```
+
+### 4. Start the development server
+
+```bash
+npm run dev
+```
+
+The application will be available at:
+
+```text
+http://localhost:3000
+```
+
+---
+
+## 🏗️ Production Build
+
+To create a production build:
+
+```bash
+npm run build
+```
+
+To start the production server:
+
+```bash
+npm start
+```
+
+---
+
+## 🔐 Environment Variables
+
+The project requires environment variables for services such as Supabase and EmailJS.
+
+Create a `.env.local` file in the project root and add the required configuration.
+
+Example:
+
+```env
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+
+NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
+```
+
+**Do not commit `.env.local` or secret credentials to GitHub.**
+
+---
+
+## ☁️ Deployment
+
+The application is designed to support production deployment on platforms compatible with Next.js.
+
+The project can be deployed using:
+
+- Vercel
+- Hostinger
+- Other Next.js-compatible hosting providers
+
+The production application uses Supabase for database and storage services.
+
+---
+
+## 🔗 Repository
+
+GitHub repository:
+
+https://github.com/mvryvmredv-cyber/velmoor-website
+
+---
+
+## 📄 License
+
+This project is developed for the Velmoor real estate marketing platform.

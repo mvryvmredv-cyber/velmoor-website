@@ -2,7 +2,7 @@ import { notFound, redirect } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import { supabase } from "@/lib/supabase";
 import PropertyImagesEditor from "@/components/PropertyImagesEditor";
-import PropertyVideoEditor from "@/components/PropertyVideoEditor";
+
 type Props = {
   params: Promise<{
     locale: string;
@@ -93,35 +93,7 @@ export default async function EditPropertyPage({ params }: Props) {
 
       status: String(formData.get("status") || "pending"),
     };
-    // ================= VIDEO =================
 
-    const existingVideo = String(formData.get("existing_video") || "");
-
-    const newVideo = formData.get("new_video");
-
-    let finalVideo = existingVideo || null;
-
-    // Upload new video
-    if (newVideo instanceof File && newVideo.size > 0) {
-      const extension = newVideo.name.split(".").pop()?.toLowerCase() || "mp4";
-
-      const fileName = `${id}/${crypto.randomUUID()}.${extension}`;
-
-      const { error: uploadError } = await supabase.storage
-        .from("property-videos")
-        .upload(fileName, newVideo);
-
-      if (uploadError) {
-        console.error("VIDEO UPLOAD ERROR:", uploadError);
-        throw new Error(uploadError.message);
-      }
-
-      const { data: publicUrlData } = supabase.storage
-        .from("property-videos")
-        .getPublicUrl(fileName);
-
-      finalVideo = publicUrlData.publicUrl;
-    }
     // ================= IMAGES =================
 
     // الصور القديمة التي لسه المستخدم محتفظ بها
@@ -163,7 +135,7 @@ export default async function EditPropertyPage({ params }: Props) {
     const finalImages = [...existingImages, ...newImageUrls];
     const { error } = await supabase
       .from("properties")
-      .update({ ...updatedProperty, images: finalImages, video: finalVideo })
+      .update({ ...updatedProperty, images: finalImages })
       .eq("id", id);
 
     if (error) {
@@ -501,7 +473,7 @@ export default async function EditPropertyPage({ params }: Props) {
                   : []
             }
           />
-          <PropertyVideoEditor video={property.video ?? null} />
+
           {/* ================= BUTTONS ================= */}
 
           <div className="flex flex-col sm:flex-row gap-3 pt-5 border-t border-gray-100 dark:border-slate-800">
