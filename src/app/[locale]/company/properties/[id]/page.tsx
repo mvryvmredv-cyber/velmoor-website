@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import { supabase } from "@/lib/supabase";
-
+import PropertyImageGallery from "@/components/PropertyImageGallery";
 type Props = {
   params: Promise<{
     locale: string;
@@ -141,38 +141,17 @@ export default async function PropertyDetailsPage({ params }: Props) {
         </div>
 
         {/* ================= IMAGES ================= */}
-
         {images.length > 0 ? (
-          <section className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
-            {images.map((image, index) => (
-              <div
-                key={`${image}-${index}`}
-                className="overflow-hidden rounded-2xl bg-gray-100 dark:bg-slate-800"
-              >
-                <div className="relative">
-                  <img
-                    src={image}
-                    alt={`${t("imageAlt")} ${index + 1}`}
-                    className="w-full h-72 md:h-80 object-cover"
-                  />
-
-                  <a
-                    href={`/api/properties/download?url=${encodeURIComponent(image)}`}
-                    className="absolute bottom-4 right-4 inline-flex items-center gap-2 rounded-xl bg-[#1b3255] text-white px-4 py-3 text-sm font-semibold shadow-lg hover:bg-[#142844] transition"
-                  >
-                    ⬇️ {t("downloadImage")}
-                  </a>
-                </div>
-              </div>
-            ))}
-          </section>
+          <PropertyImageGallery
+            images={images}
+            imageAlt={t("imageAlt")}
+            downloadImage={t("downloadImage")}
+          />
         ) : (
           <div className="bg-white dark:bg-slate-900 rounded-2xl p-8 text-center text-gray-400 mb-10">
             {t("noImage")}
           </div>
         )}
-
-      
 
         {/* ================= BASIC PROPERTY INFORMATION ================= */}
 
