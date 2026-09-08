@@ -6,12 +6,9 @@ import { usePathname } from "next/navigation";
 export default function WhatsAppButton() {
   const pathname = usePathname();
 
-  // إخفاء واتساب في Login و Dashboard
-  const isCompanyPage =
-    pathname.includes("/company/login") ||
-    pathname.includes("/company/dashboard");
+  const shouldHide = pathname.includes("/company");
 
-  if (isCompanyPage) {
+  if (shouldHide) {
     return null;
   }
 
