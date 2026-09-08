@@ -1,8 +1,20 @@
 "use client";
 
 import { FaWhatsapp } from "react-icons/fa";
+import { usePathname } from "next/navigation";
 
 export default function WhatsAppButton() {
+  const pathname = usePathname();
+
+  // إخفاء واتساب في Login و Dashboard
+  const isCompanyPage =
+    pathname.includes("/company/login") ||
+    pathname.includes("/company/dashboard");
+
+  if (isCompanyPage) {
+    return null;
+  }
+
   return (
     <a
       href="https://wa.me/+20 10 11196903?text=مرحباً، أريد الاستفسار عن المشروعات المتاحة."
