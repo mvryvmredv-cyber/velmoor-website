@@ -186,7 +186,18 @@ export default async function PropertyDetailsPage({ params }: Props) {
             <Info label={t("status")} value={status} />
           </div>
         </section>
-
+        {/* ================= IMAGES ================= */}
+        {images.length > 0 ? (
+          <PropertyImageGallery
+            images={images}
+            imageAlt={t("imageAlt")}
+            downloadImage={t("downloadImage")}
+          />
+        ) : (
+          <div className="bg-white dark:bg-slate-900 rounded-2xl p-8 text-center text-gray-400 mb-10">
+            {t("noImage")}
+          </div>
+        )}
         {/* ================= FEATURES ================= */}
 
         {(booleanValue(property.has_elevator) ||
