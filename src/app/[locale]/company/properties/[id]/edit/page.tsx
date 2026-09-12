@@ -2,7 +2,7 @@ import { notFound, redirect } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import { supabase } from "@/lib/supabase";
 import PropertyImagesEditor from "@/components/PropertyImagesEditor";
-
+import MoneyInput from "@/components/MoneyInput";
 type Props = {
   params: Promise<{
     locale: string;
@@ -263,10 +263,9 @@ export default async function EditPropertyPage({ params }: Props) {
             </h2>
 
             <div className="grid md:grid-cols-2 gap-5">
-              <Input
+              <MoneyInput
                 label={t("price")}
                 name="price"
-                type="number"
                 defaultValue={property.price ?? ""}
               />
 
@@ -357,11 +356,9 @@ export default async function EditPropertyPage({ params }: Props) {
                   ["bank", t("paymentMethods.bank")],
                 ]}
               />
-
-              <Input
+              <MoneyInput
                 label={t("downPayment")}
                 name="down_payment"
-                type="number"
                 defaultValue={property.down_payment ?? ""}
               />
 
@@ -370,11 +367,9 @@ export default async function EditPropertyPage({ params }: Props) {
                 name="installment_duration"
                 defaultValue={property.installment_duration ?? ""}
               />
-
-              <Input
+              <MoneyInput
                 label={t("installmentAmount")}
                 name="installment_amount"
-                type="number"
                 defaultValue={property.installment_amount ?? ""}
               />
 
