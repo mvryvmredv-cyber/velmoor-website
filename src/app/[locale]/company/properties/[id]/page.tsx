@@ -138,18 +138,19 @@ export default async function PropertyDetailsPage({ params }: Props) {
           </div>
         </div>
 
-        {/* ================= IMAGES ================= */}
-        {images.length > 0 ? (
-          <PropertyImageGallery
-            images={images}
-            imageAlt={t("imageAlt")}
-            downloadImage={t("downloadImage")}
-          />
-        ) : (
-          <div className="bg-white dark:bg-slate-900 rounded-2xl p-8 text-center text-gray-400 mb-10">
-            {t("noImage")}
+        {/* ================= OWNER ================= */}
+
+        <section className="bg-white dark:bg-slate-900 rounded-3xl p-6 md:p-8 shadow-sm mb-6">
+          <h2 className="text-2xl font-bold text-[#1b3255] dark:text-white mb-6">
+            {t("ownerInformation")}
+          </h2>
+
+          <div className="grid sm:grid-cols-2 gap-5">
+            <Info label={t("ownerName")} value={property.name} />
+
+            <Info label={t("phone")} value={property.phone} />
           </div>
-        )}
+        </section>
 
         {/* ================= BASIC PROPERTY INFORMATION ================= */}
 
@@ -282,20 +283,6 @@ export default async function PropertyDetailsPage({ params }: Props) {
             )}
           </section>
         )}
-
-        {/* ================= OWNER ================= */}
-
-        <section className="bg-white dark:bg-slate-900 rounded-3xl p-6 md:p-8 shadow-sm mb-6">
-          <h2 className="text-2xl font-bold text-[#1b3255] dark:text-white mb-6">
-            {t("ownerInformation")}
-          </h2>
-
-          <div className="grid sm:grid-cols-2 gap-5">
-            <Info label={t("ownerName")} value={property.name} />
-
-            <Info label={t("phone")} value={property.phone} />
-          </div>
-        </section>
 
         {/* ================= DESCRIPTION ================= */}
 
