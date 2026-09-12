@@ -483,64 +483,6 @@ export default async function EditPropertyPage({ params }: Props) {
   );
 }
 
-/* ================= INPUT ================= */
-
-function Input({
-  label,
-  name,
-  defaultValue,
-  type = "text",
-}: {
-  label: string;
-  name: string;
-  defaultValue: string | number | null;
-  type?: string;
-}) {
-  const isMoneyField =
-    name === "price" ||
-    name === "down_payment" ||
-    name === "installment_amount";
-
-  const formattedDefaultValue =
-    isMoneyField &&
-    defaultValue !== null &&
-    defaultValue !== undefined &&
-    defaultValue !== ""
-      ? Number(String(defaultValue).replace(/,/g, "")).toLocaleString("en-US")
-      : (defaultValue ?? "");
-
-  return (
-    <div>
-      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-        {label}
-      </label>
-
-      <input
-        name={name}
-        type={isMoneyField ? "text" : type}
-        inputMode={isMoneyField ? "numeric" : undefined}
-        defaultValue={formattedDefaultValue}
-        onInput={
-          isMoneyField
-            ? (event) => {
-                const input = event.currentTarget;
-                const rawValue = input.value.replace(/,/g, "");
-
-                if (rawValue === "" || /^\d+$/.test(rawValue)) {
-                  input.value =
-                    rawValue === ""
-                      ? ""
-                      : Number(rawValue).toLocaleString("en-US");
-                }
-              }
-            : undefined
-        }
-        className="w-full h-12 rounded-xl border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 px-4 outline-none focus:ring-2 focus:ring-[#1b3255]/20 dark:text-white"
-      />
-    </div>
-  );
-}
-
 /* ================= SELECT ================= */
 
 function Select({
