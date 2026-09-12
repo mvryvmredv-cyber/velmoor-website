@@ -38,8 +38,9 @@ export default async function EditPropertyPage({ params }: Props) {
       "property-type": String(formData.get("property-type") || ""),
 
       location: String(formData.get("location") || ""),
-
-      price: formData.get("price") ? Number(formData.get("price")) : null,
+      price: formData.get("price")
+        ? Number(String(formData.get("price")).replace(/,/g, ""))
+        : null,
 
       area: formData.get("area") ? Number(formData.get("area")) : null,
 
@@ -64,14 +65,13 @@ export default async function EditPropertyPage({ params }: Props) {
       payment_method: String(formData.get("payment_method") || "") || null,
 
       down_payment: formData.get("down_payment")
-        ? Number(formData.get("down_payment"))
+        ? Number(String(formData.get("down_payment")).replace(/,/g, ""))
         : null,
 
       installment_duration:
         String(formData.get("installment_duration") || "") || null,
-
       installment_amount: formData.get("installment_amount")
-        ? Number(formData.get("installment_amount"))
+        ? Number(String(formData.get("installment_amount")).replace(/,/g, ""))
         : null,
 
       payment_frequency:
@@ -496,6 +496,19 @@ function Input({
   defaultValue: string | number | null;
   type?: string;
 }) {
+  const isMoneyField =
+    name === "price" ||
+    name === "down_payment" ||
+    name === "installment_amount";
+
+  const formattedDefaultValue =
+    isMoneyField &&
+    defaultValue !== null &&
+    defaultValue !== undefined &&
+    defaultValue !== ""
+      ? Number(String(defaultValue).replace(/,/g, "")).toLocaleString("en-US")
+      : (defaultValue ?? "");
+
   return (
     <div>
       <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
@@ -504,8 +517,24 @@ function Input({
 
       <input
         name={name}
-        type={type}
-        defaultValue={defaultValue ?? ""}
+        type={isMoneyField ? "text" : type}
+        inputMode={isMoneyField ? "numeric" : undefined}
+        defaultValue={formattedDefaultValue}
+        onInput={
+          isMoneyField
+            ? (event) => {
+                const input = event.currentTarget;
+                const rawValue = input.value.replace(/,/g, "");
+
+                if (rawValue === "" || /^\d+$/.test(rawValue)) {
+                  input.value =
+                    rawValue === ""
+                      ? ""
+                      : Number(rawValue).toLocaleString("en-US");
+                }
+              }
+            : undefined
+        }
         className="w-full h-12 rounded-xl border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 px-4 outline-none focus:ring-2 focus:ring-[#1b3255]/20 dark:text-white"
       />
     </div>
