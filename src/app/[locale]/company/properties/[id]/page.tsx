@@ -91,8 +91,6 @@ export default async function PropertyDetailsPage({ params }: Props) {
 
   const finishing = translateIfExists("finishingTypes", property.finishing);
 
-  const direction = translateIfExists("directions", property.direction);
-
   const status = translateIfExists("statuses", property.status);
 
   const propertyTypeName = translateIfExists("propertyTypes", propertyType);
@@ -183,8 +181,6 @@ export default async function PropertyDetailsPage({ params }: Props) {
             <Info label={t("finishing")} value={finishing} />
 
             <Info label={t("view")} value={property.view} />
-
-            <Info label={t("direction")} value={direction} />
 
             <Info label={t("status")} value={status} />
           </div>
