@@ -55,8 +55,6 @@ export default async function EditPropertyPage({ params }: Props) {
 
       view: String(formData.get("view") || "") || null,
 
-      direction: String(formData.get("direction") || "") || null,
-
       has_elevator: formData.get("has_elevator") === "true",
 
       has_garage: formData.get("has_garage") === "true",
@@ -315,18 +313,6 @@ export default async function EditPropertyPage({ params }: Props) {
                 label={t("view")}
                 name="view"
                 defaultValue={property.view ?? ""}
-              />
-
-              <Select
-                label={t("direction")}
-                name="direction"
-                defaultValue={property.direction ?? ""}
-                options={[
-                  ["north", t("directions.north")],
-                  ["south", t("directions.south")],
-                  ["east", t("directions.east")],
-                  ["west", t("directions.west")],
-                ]}
               />
             </div>
 
