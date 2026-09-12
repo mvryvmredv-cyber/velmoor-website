@@ -232,6 +232,8 @@ export default async function PropertyDetailsPage({ params }: Props) {
             </h2>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              <Info label={t("paymentMethod")} value={paymentMethod} />
+
               <Info
                 label={
                   t("paymentInformation") === "بيانات الدفع"
@@ -252,6 +254,7 @@ export default async function PropertyDetailsPage({ params }: Props) {
                 label={t("installmentAmount")}
                 value={formattedInstallmentAmount}
               />
+
               <Info
                 label={t("paymentFrequencyLabel")}
                 value={paymentFrequency}
