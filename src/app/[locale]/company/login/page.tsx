@@ -64,9 +64,7 @@ export default function CompanyLoginPage() {
 
   return (
     <main className="min-h-screen bg-[#f5f7fa] dark:bg-slate-950 flex items-center justify-center px-4">
-      {/* ========================= */}
       {/* TOP CONTROLS */}
-      {/* ========================= */}
 
       {/* Dark / Light Mode */}
       <div className="absolute top-6 left-6">
@@ -83,9 +81,7 @@ export default function CompanyLoginPage() {
         <span>{locale === "ar" ? "English" : "العربية"}</span>
       </Link>
 
-      {/* ========================= */}
       {/* LOGIN CARD */}
-      {/* ========================= */}
 
       <div className="w-full max-w-5xl bg-white dark:bg-slate-900 rounded-[32px] overflow-hidden shadow-2xl grid md:grid-cols-2">
         {/* Left */}

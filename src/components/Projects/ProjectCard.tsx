@@ -134,31 +134,6 @@ export default function ProjectCard({
                       </span>
                     </div>
                   </button>
-                  {/* <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setOpen(true);
-                    }}
-                    className="
-absolute inset-0
-flex items-center justify-center
-bg-black/25
-opacity-100
-md:opacity-0
-md:hover:opacity-100
-transition-all duration-300
-"
-                  >
-                    <div className="flex items-center gap-3 bg-white/90 px-5 py-3 rounded-full shadow-lg">
-                      <div className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-[#1b3255] flex items-center justify-center">
-                        <Play size={16} fill="white" />
-                      </div>
-
-                      <span className="text-sm md:text-base font-semibold text-[#1b3255]">
-                        {t("watchVideo")}
-                      </span>
-                    </div>
-                  </button> */}
                 </div>
               </SwiperSlide>
             ))}

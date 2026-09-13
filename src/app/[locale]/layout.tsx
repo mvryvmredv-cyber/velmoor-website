@@ -44,7 +44,7 @@ export async function generateMetadata({
   const isArabic = locale === "ar";
 
   return {
-    // metadataBase: new URL("https://velmoor.com"),
+    metadataBase: new URL("https://velmoor-real-estate.com"),
 
     title: isArabic
       ? "ڤلمور | التسويق العقاري"
@@ -104,7 +104,7 @@ export async function generateMetadata({
         ? "اكتشف أفضل الفرص العقارية مع ڤلمور."
         : "Discover premium real estate opportunities with Velmoor.",
 
-      // url: "https://velmoor.com",
+      url: "https://velmoor-real-estate.com",
 
       siteName: "Velmoor",
 
